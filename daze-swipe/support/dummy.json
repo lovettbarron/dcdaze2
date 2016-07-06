@@ -1,0 +1,74 @@
+{
+    "today": [
+              {
+              "category": 0,
+              "name": "SUUNS",
+              "desc": "Suuns is a Canadian rock band from Montreal. The group was formed in the summer of 2007 when vocalist/guitarist Ben Shemie and guitarist/bassist Joe Yarmush got together to make some beats which quickly evolved into a few songs.",
+              "loc": "BlackCat",
+              "time": "7pm"
+              },
+              {
+              "category": 1,
+              "name": "TomorrowBread",
+              "desc": "Spanish small plates & wine presented in rustic yet elegant digs with courtyard & outdoor fireplace.",
+              "loc": "1622 14th St NW, Washington, DC 20009",
+              "time": "Best at 7pm"
+              },
+              {
+              "category": 2,
+              "name": "After-After-Party",
+              "desc": "Enjoy the After After party with Tracy Jordan at the Docks.",
+              "loc": "Docsk",
+              "time": "Starting at 4am"
+              }
+              ],
+    
+    "yesterday": [
+                  {
+                  "category": 0,
+                  "name": "All Makes Parts and Collisions",
+                  "desc": "All Makes Parts & Collisions was a band existing around Canadian musician Alden Penner (of The Unicorns and Clues) around 2002. Despite only performing a handful of shows, many songs recorded under the band name have surfaced online. According to Penner, \"The only thing we put out was a one minute song on a 3 floppy disk",
+                  "loc": "BlackCat",
+                  "time": "11pm"
+                  },
+                  {
+                  "category": 1,
+                  "name": "Philz Coffee",
+                  "desc": "Spanish small plates & wine presented in rustic yet elegant digs with courtyard & outdoor fireplace.",
+                  "loc": "1622 14th St NW, Washington, DC 20009",
+                  "time": "Best at 7pm"
+                  },
+                  {
+                  "category": 2,
+                  "name": "Fireworks at the Navy Yard",
+                  "desc": "Fireworks going off at the navy yard starting at 9pm. With no cops and outdoor drinks allowed, come by to enjoy the warm weather and knock back some beers.",
+                  "loc": "4th and Tingey",
+                  "time": "Starting at 9pm"
+                  }
+                  ],
+    
+    "tomorrow": [
+                 {
+                 "category": 0,
+                 "name": "Arcade Fire",
+                 "desc": "Arcade Fire is a Canadian indie rock band based in Montreal, Quebec consisting of husband and wife Win Butler and Régine Chassagne, along with Win's younger brother Will Butler, Richard Reed Parry, Tim Kingsbury and Jeremy Gara.",
+                 "loc": "BlackCat",
+                 "time": "9pm"
+                 },
+                 {
+                 "category": 1,
+                 "name": "Eddt",
+                 "desc": "Spanish small plates & wine presented in rustic yet elegant digs with courtyard & outdoor fireplace.",
+                 "loc": "1622 14th St NW, Washington, DC 20009",
+                 "time": "Best at 7pm"
+                 },
+                 {
+                 "category": 2,
+                 "name": "90s Dance party",
+                 "desc": "Get your destiny's child on",
+                 "loc": "The social",
+                 "time": "Starting at 11pm"
+                 }
+                 ]
+    
+}

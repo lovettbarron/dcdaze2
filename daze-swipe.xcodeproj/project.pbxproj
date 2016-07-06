@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8359CFAF1D27282100A314EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFAE1D27282100A314EA /* AppDelegate.swift */; };
+		8359CFB11D27282100A314EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFB01D27282100A314EA /* ViewController.swift */; };
+		8359CFB41D27282100A314EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8359CFB21D27282100A314EA /* Main.storyboard */; };
+		8359CFB71D27282100A314EA /* daze_swipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFB51D27282100A314EA /* daze_swipe.xcdatamodeld */; };
+		8359CFB91D27282100A314EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8359CFB81D27282100A314EA /* Assets.xcassets */; };
+		8359CFBC1D27282100A314EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8359CFBA1D27282100A314EA /* LaunchScreen.storyboard */; };
+		8359CFC71D27282100A314EA /* daze_swipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFC61D27282100A314EA /* daze_swipeTests.swift */; };
+		8359CFD21D27282100A314EA /* daze_swipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFD11D27282100A314EA /* daze_swipeUITests.swift */; };
+		8359CFE01D272B2B00A314EA /* yesterdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFDF1D272B2B00A314EA /* yesterdayView.swift */; };
+		8359CFE21D272B3100A314EA /* todayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE11D272B3100A314EA /* todayView.swift */; };
+		8359CFE41D272B3800A314EA /* tomorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE31D272B3800A314EA /* tomorrowView.swift */; };
+		83E932431D27372C0008047D /* cardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932421D27372C0008047D /* cardCellView.swift */; };
+		83E932451D27376E0008047D /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932441D27376E0008047D /* CardClass.swift */; };
+		83E932471D274EE10008047D /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E932461D274EE10008047D /* dummy.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8359CFC31D27282100A314EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8359CFA31D27282100A314EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8359CFAA1D27282100A314EA;
+			remoteInfo = "daze-swipe";
+		};
+		8359CFCE1D27282100A314EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8359CFA31D27282100A314EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8359CFAA1D27282100A314EA;
+			remoteInfo = "daze-swipe";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8359CFAB1D27282100A314EA /* daze-swipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daze-swipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8359CFAE1D27282100A314EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8359CFB01D27282100A314EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8359CFB31D27282100A314EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8359CFB61D27282100A314EA /* daze_swipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = daze_swipe.xcdatamodel; sourceTree = "<group>"; };
+		8359CFB81D27282100A314EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8359CFBB1D27282100A314EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8359CFBD1D27282100A314EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8359CFC21D27282100A314EA /* daze-swipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "daze-swipeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8359CFC61D27282100A314EA /* daze_swipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daze_swipeTests.swift; sourceTree = "<group>"; };
+		8359CFC81D27282100A314EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8359CFCD1D27282100A314EA /* daze-swipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "daze-swipeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8359CFD11D27282100A314EA /* daze_swipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daze_swipeUITests.swift; sourceTree = "<group>"; };
+		8359CFD31D27282100A314EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8359CFDF1D272B2B00A314EA /* yesterdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yesterdayView.swift; sourceTree = "<group>"; };
+		8359CFE11D272B3100A314EA /* todayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = todayView.swift; sourceTree = "<group>"; };
+		8359CFE31D272B3800A314EA /* tomorrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tomorrowView.swift; sourceTree = "<group>"; };
+		83E932421D27372C0008047D /* cardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardCellView.swift; sourceTree = "<group>"; };
+		83E932441D27376E0008047D /* CardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
+		83E932461D274EE10008047D /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dummy.json; path = support/dummy.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8359CFA81D27282100A314EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8359CFBF1D27282100A314EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8359CFCA1D27282100A314EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8359CFA21D27282100A314EA = {
+			isa = PBXGroup;
+			children = (
+				8359CFAD1D27282100A314EA /* daze-swipe */,
+				8359CFC51D27282100A314EA /* daze-swipeTests */,
+				8359CFD01D27282100A314EA /* daze-swipeUITests */,
+				8359CFAC1D27282100A314EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8359CFAC1D27282100A314EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8359CFAB1D27282100A314EA /* daze-swipe.app */,
+				8359CFC21D27282100A314EA /* daze-swipeTests.xctest */,
+				8359CFCD1D27282100A314EA /* daze-swipeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8359CFAD1D27282100A314EA /* daze-swipe */ = {
+			isa = PBXGroup;
+			children = (
+				8359CFAE1D27282100A314EA /* AppDelegate.swift */,
+				8359CFB01D27282100A314EA /* ViewController.swift */,
+				83E932421D27372C0008047D /* cardCellView.swift */,
+				83E932441D27376E0008047D /* CardClass.swift */,
+				8359CFDF1D272B2B00A314EA /* yesterdayView.swift */,
+				8359CFE11D272B3100A314EA /* todayView.swift */,
+				8359CFE31D272B3800A314EA /* tomorrowView.swift */,
+				8359CFB21D27282100A314EA /* Main.storyboard */,
+				8359CFB81D27282100A314EA /* Assets.xcassets */,
+				8359CFBA1D27282100A314EA /* LaunchScreen.storyboard */,
+				8359CFBD1D27282100A314EA /* Info.plist */,
+				8359CFB51D27282100A314EA /* daze_swipe.xcdatamodeld */,
+				83E932461D274EE10008047D /* dummy.json */,
+			);
+			path = "daze-swipe";
+			sourceTree = "<group>";
+		};
+		8359CFC51D27282100A314EA /* daze-swipeTests */ = {
+			isa = PBXGroup;
+			children = (
+				8359CFC61D27282100A314EA /* daze_swipeTests.swift */,
+				8359CFC81D27282100A314EA /* Info.plist */,
+			);
+			path = "daze-swipeTests";
+			sourceTree = "<group>";
+		};
+		8359CFD01D27282100A314EA /* daze-swipeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8359CFD11D27282100A314EA /* daze_swipeUITests.swift */,
+				8359CFD31D27282100A314EA /* Info.plist */,
+			);
+			path = "daze-swipeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8359CFAA1D27282100A314EA /* daze-swipe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8359CFD61D27282100A314EA /* Build configuration list for PBXNativeTarget "daze-swipe" */;
+			buildPhases = (
+				8359CFA71D27282100A314EA /* Sources */,
+				8359CFA81D27282100A314EA /* Frameworks */,
+				8359CFA91D27282100A314EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "daze-swipe";
+			productName = "daze-swipe";
+			productReference = 8359CFAB1D27282100A314EA /* daze-swipe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8359CFC11D27282100A314EA /* daze-swipeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8359CFD91D27282100A314EA /* Build configuration list for PBXNativeTarget "daze-swipeTests" */;
+			buildPhases = (
+				8359CFBE1D27282100A314EA /* Sources */,
+				8359CFBF1D27282100A314EA /* Frameworks */,
+				8359CFC01D27282100A314EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8359CFC41D27282100A314EA /* PBXTargetDependency */,
+			);
+			name = "daze-swipeTests";
+			productName = "daze-swipeTests";
+			productReference = 8359CFC21D27282100A314EA /* daze-swipeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8359CFCC1D27282100A314EA /* daze-swipeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8359CFDC1D27282100A314EA /* Build configuration list for PBXNativeTarget "daze-swipeUITests" */;
+			buildPhases = (
+				8359CFC91D27282100A314EA /* Sources */,
+				8359CFCA1D27282100A314EA /* Frameworks */,
+				8359CFCB1D27282100A314EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8359CFCF1D27282100A314EA /* PBXTargetDependency */,
+			);
+			name = "daze-swipeUITests";
+			productName = "daze-swipeUITests";
+			productReference = 8359CFCD1D27282100A314EA /* daze-swipeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8359CFA31D27282100A314EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = RelayStudio;
+				TargetAttributes = {
+					8359CFAA1D27282100A314EA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					8359CFC11D27282100A314EA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8359CFAA1D27282100A314EA;
+					};
+					8359CFCC1D27282100A314EA = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8359CFAA1D27282100A314EA;
+					};
+				};
+			};
+			buildConfigurationList = 8359CFA61D27282100A314EA /* Build configuration list for PBXProject "daze-swipe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8359CFA21D27282100A314EA;
+			productRefGroup = 8359CFAC1D27282100A314EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8359CFAA1D27282100A314EA /* daze-swipe */,
+				8359CFC11D27282100A314EA /* daze-swipeTests */,
+				8359CFCC1D27282100A314EA /* daze-swipeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8359CFA91D27282100A314EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8359CFBC1D27282100A314EA /* LaunchScreen.storyboard in Resources */,
+				8359CFB91D27282100A314EA /* Assets.xcassets in Resources */,
+				83E932471D274EE10008047D /* dummy.json in Resources */,
+				8359CFB41D27282100A314EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8359CFC01D27282100A314EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8359CFCB1D27282100A314EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8359CFA71D27282100A314EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8359CFB11D27282100A314EA /* ViewController.swift in Sources */,
+				8359CFE21D272B3100A314EA /* todayView.swift in Sources */,
+				83E932451D27376E0008047D /* CardClass.swift in Sources */,
+				8359CFAF1D27282100A314EA /* AppDelegate.swift in Sources */,
+				83E932431D27372C0008047D /* cardCellView.swift in Sources */,
+				8359CFB71D27282100A314EA /* daze_swipe.xcdatamodeld in Sources */,
+				8359CFE01D272B2B00A314EA /* yesterdayView.swift in Sources */,
+				8359CFE41D272B3800A314EA /* tomorrowView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8359CFBE1D27282100A314EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8359CFC71D27282100A314EA /* daze_swipeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8359CFC91D27282100A314EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8359CFD21D27282100A314EA /* daze_swipeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8359CFC41D27282100A314EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8359CFAA1D27282100A314EA /* daze-swipe */;
+			targetProxy = 8359CFC31D27282100A314EA /* PBXContainerItemProxy */;
+		};
+		8359CFCF1D27282100A314EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8359CFAA1D27282100A314EA /* daze-swipe */;
+			targetProxy = 8359CFCE1D27282100A314EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8359CFB21D27282100A314EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8359CFB31D27282100A314EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8359CFBA1D27282100A314EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8359CFBB1D27282100A314EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8359CFD41D27282100A314EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8359CFD51D27282100A314EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8359CFD71D27282100A314EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "daze-swipe/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipe";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8359CFD81D27282100A314EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "daze-swipe/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipe";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8359CFDA1D27282100A314EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "daze-swipeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daze-swipe.app/daze-swipe";
+			};
+			name = Debug;
+		};
+		8359CFDB1D27282100A314EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "daze-swipeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/daze-swipe.app/daze-swipe";
+			};
+			name = Release;
+		};
+		8359CFDD1D27282100A314EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "daze-swipeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "daze-swipe";
+			};
+			name = Debug;
+		};
+		8359CFDE1D27282100A314EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "daze-swipeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "daze-swipe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8359CFA61D27282100A314EA /* Build configuration list for PBXProject "daze-swipe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8359CFD41D27282100A314EA /* Debug */,
+				8359CFD51D27282100A314EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8359CFD61D27282100A314EA /* Build configuration list for PBXNativeTarget "daze-swipe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8359CFD71D27282100A314EA /* Debug */,
+				8359CFD81D27282100A314EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8359CFD91D27282100A314EA /* Build configuration list for PBXNativeTarget "daze-swipeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8359CFDA1D27282100A314EA /* Debug */,
+				8359CFDB1D27282100A314EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8359CFDC1D27282100A314EA /* Build configuration list for PBXNativeTarget "daze-swipeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8359CFDD1D27282100A314EA /* Debug */,
+				8359CFDE1D27282100A314EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8359CFB51D27282100A314EA /* daze_swipe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8359CFB61D27282100A314EA /* daze_swipe.xcdatamodel */,
+			);
+			currentVersion = 8359CFB61D27282100A314EA /* daze_swipe.xcdatamodel */;
+			path = daze_swipe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8359CFA31D27282100A314EA /* Project object */;
+}
