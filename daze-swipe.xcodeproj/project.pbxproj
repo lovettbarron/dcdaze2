@@ -15,9 +15,7 @@
 		8359CFBC1D27282100A314EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8359CFBA1D27282100A314EA /* LaunchScreen.storyboard */; };
 		8359CFC71D27282100A314EA /* daze_swipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFC61D27282100A314EA /* daze_swipeTests.swift */; };
 		8359CFD21D27282100A314EA /* daze_swipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFD11D27282100A314EA /* daze_swipeUITests.swift */; };
-		8359CFE01D272B2B00A314EA /* yesterdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFDF1D272B2B00A314EA /* yesterdayView.swift */; };
-		8359CFE21D272B3100A314EA /* todayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE11D272B3100A314EA /* todayView.swift */; };
-		8359CFE41D272B3800A314EA /* tomorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE31D272B3800A314EA /* tomorrowView.swift */; };
+		8359CFE21D272B3100A314EA /* dayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE11D272B3100A314EA /* dayView.swift */; };
 		83E932431D27372C0008047D /* cardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932421D27372C0008047D /* cardCellView.swift */; };
 		83E932451D27376E0008047D /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932441D27376E0008047D /* CardClass.swift */; };
 		83E932471D274EE10008047D /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E932461D274EE10008047D /* dummy.json */; };
@@ -55,9 +53,7 @@
 		8359CFCD1D27282100A314EA /* daze-swipeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "daze-swipeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8359CFD11D27282100A314EA /* daze_swipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daze_swipeUITests.swift; sourceTree = "<group>"; };
 		8359CFD31D27282100A314EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8359CFDF1D272B2B00A314EA /* yesterdayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yesterdayView.swift; sourceTree = "<group>"; };
-		8359CFE11D272B3100A314EA /* todayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = todayView.swift; sourceTree = "<group>"; };
-		8359CFE31D272B3800A314EA /* tomorrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tomorrowView.swift; sourceTree = "<group>"; };
+		8359CFE11D272B3100A314EA /* dayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayView.swift; sourceTree = "<group>"; };
 		83E932421D27372C0008047D /* cardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardCellView.swift; sourceTree = "<group>"; };
 		83E932441D27376E0008047D /* CardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
 		83E932461D274EE10008047D /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dummy.json; path = support/dummy.json; sourceTree = "<group>"; };
@@ -111,13 +107,12 @@
 		8359CFAD1D27282100A314EA /* daze-swipe */ = {
 			isa = PBXGroup;
 			children = (
+				83E9A6541D2EB399002FAD25 /* Assets */,
 				8359CFAE1D27282100A314EA /* AppDelegate.swift */,
 				8359CFB01D27282100A314EA /* ViewController.swift */,
 				83E932421D27372C0008047D /* cardCellView.swift */,
 				83E932441D27376E0008047D /* CardClass.swift */,
-				8359CFDF1D272B2B00A314EA /* yesterdayView.swift */,
-				8359CFE11D272B3100A314EA /* todayView.swift */,
-				8359CFE31D272B3800A314EA /* tomorrowView.swift */,
+				8359CFE11D272B3100A314EA /* dayView.swift */,
 				8359CFB21D27282100A314EA /* Main.storyboard */,
 				8359CFB81D27282100A314EA /* Assets.xcassets */,
 				8359CFBA1D27282100A314EA /* LaunchScreen.storyboard */,
@@ -144,6 +139,13 @@
 				8359CFD31D27282100A314EA /* Info.plist */,
 			);
 			path = "daze-swipeUITests";
+			sourceTree = "<group>";
+		};
+		83E9A6541D2EB399002FAD25 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +216,7 @@
 				TargetAttributes = {
 					8359CFAA1D27282100A314EA = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = X9ZE6E9DJ2;
 					};
 					8359CFC11D27282100A314EA = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -279,13 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8359CFB11D27282100A314EA /* ViewController.swift in Sources */,
-				8359CFE21D272B3100A314EA /* todayView.swift in Sources */,
+				8359CFE21D272B3100A314EA /* dayView.swift in Sources */,
 				83E932451D27376E0008047D /* CardClass.swift in Sources */,
 				8359CFAF1D27282100A314EA /* AppDelegate.swift in Sources */,
 				83E932431D27372C0008047D /* cardCellView.swift in Sources */,
 				8359CFB71D27282100A314EA /* daze_swipe.xcdatamodeld in Sources */,
-				8359CFE01D272B2B00A314EA /* yesterdayView.swift in Sources */,
-				8359CFE41D272B3800A314EA /* tomorrowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,10 +428,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "daze-swipe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipe";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -438,10 +442,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "daze-swipe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alb.daze-swipe";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

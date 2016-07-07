@@ -20,30 +20,56 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var bounds = UIScreen.mainScreen().bounds
+        let bounds = UIScreen.mainScreen().bounds
         
+        // Instantiate all the views
         let ListOfViews = [
             "yesterdayView": 0,
             "todayView": 1,
-            "tomorrowView": 2
+            "tomorrowView": 2,
         ]
         
         for (page, order) in ListOfViews {
-            let view = storyboard.instantiateViewControllerWithIdentifier(page) as! UIViewController
+            let view = storyboard.instantiateViewControllerWithIdentifier("dayView") as! UIViewController
             var frame = view.view.frame
-            frame = CGRectMake(0,0, bounds.size.width, bounds.size.height)
             frame.origin.x = bounds.size.width * CGFloat(order)
+            frame.size.width = bounds.size.width
             view.view.frame = frame
+            view.view.layer.zPosition = CGFloat(order) // Weird instantiation bug...
             
+            // Setting constraints
+            
+            view.view.backgroundColor = generateViewColour(order)
+            
+            // Binding to parent
             presentViewController(view, animated: true, completion: nil)
             addChildViewController(view)
             scrollView.addSubview(view.view)
             view.didMoveToParentViewController(self)
+            print("Creating table ",page)
         }
         
         scrollView.addGestureRecognizer(scrollView.panGestureRecognizer)
-        scrollView.contentSize = CGSizeMake(bounds.size.width*3, 1.0)
+        
+        scrollView.contentSize = CGSizeMake(bounds.size.width*CGFloat(ListOfViews.count), 1.0)
 
+        // Set up the constraints
+        for (view) in scrollView.subviews {
+            
+            let widthConstraint = NSLayoutConstraint(
+                item: view,
+                attribute: NSLayoutAttribute.Width,
+                relatedBy: NSLayoutRelation.Equal,
+                toItem: nil,
+                attribute: NSLayoutAttribute.NotAnAttribute,
+                multiplier: 1,
+                constant: 320)
+            
+            
+            NSLayoutConstraint.activateConstraints([widthConstraint])
+//            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -59,8 +85,6 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-//        var bounds = UIScreen.mainScreen().bounds
-//        scrollView.contentSize = bounds.sizex
         moveScrollPointToPage(1)
     }
 
@@ -84,6 +108,20 @@ class ViewController: UIViewController {
         }
     }
     
+    func generateViewColour(order:Int) -> UIColor {
+        switch(order) {
+        case 0 :
+            return UIColor.orangeColor()
+        case 1:
+            return UIColor.blueColor()
+        case 2:
+            return UIColor.greenColor()
+        default:
+            return UIColor.grayColor()
+            
+        }
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == selectedRowIndex.row {
             return 100
@@ -92,7 +130,7 @@ class ViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
+        print("DidSelectRowAt",indexPath)
     }
 
     
