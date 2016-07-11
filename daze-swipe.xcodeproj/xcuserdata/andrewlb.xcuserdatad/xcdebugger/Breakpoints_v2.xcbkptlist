@@ -10,13 +10,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daze-swipe/ViewController.swift"
-            timestampString = "489605154.538249"
+            timestampString = "489951371.571047"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
             landmarkName = "moveScrollPointToPage(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "daze-swipe/cardCellView.swift"
+            timestampString = "489951336.265422"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "cardCellView"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.cardCellView.mapView.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/cardCellView.swift"
+                  timestampString = "489951336.78881"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.cardCellView.mapView.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/cardCellView.swift"
+                  timestampString = "489951336.790474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.cardCellView.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; daze_swipe.cardCellView"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/cardCellView.swift"
+                  timestampString = "489951336.790584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.cardCellView.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;daze_swipe.cardCellView&gt;"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/cardCellView.swift"
+                  timestampString = "489951336.790663"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "146">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

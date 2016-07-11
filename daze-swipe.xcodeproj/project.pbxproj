@@ -19,6 +19,18 @@
 		83E932431D27372C0008047D /* cardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932421D27372C0008047D /* cardCellView.swift */; };
 		83E932451D27376E0008047D /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932441D27376E0008047D /* CardClass.swift */; };
 		83E932471D274EE10008047D /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E932461D274EE10008047D /* dummy.json */; };
+		83E9A6561D2ECDB1002FAD25 /* dazeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A6551D2ECDB1002FAD25 /* dazeScrollView.swift */; };
+		83E9A65A1D2EE21F002FAD25 /* Event_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A6571D2EE21F002FAD25 /* Event_pattern.png */; };
+		83E9A65B1D2EE21F002FAD25 /* Food_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A6581D2EE21F002FAD25 /* Food_pattern.png */; };
+		83E9A65C1D2EE21F002FAD25 /* Music_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A6591D2EE21F002FAD25 /* Music_pattern.png */; };
+		83E9A6601D2EE4BC002FAD25 /* Event_pattern Copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A65D1D2EE4BC002FAD25 /* Event_pattern Copy.png */; };
+		83E9A6611D2EE4BC002FAD25 /* Food_pattern Copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A65E1D2EE4BC002FAD25 /* Food_pattern Copy.png */; };
+		83E9A6621D2EE4BC002FAD25 /* Music_pattern Copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A65F1D2EE4BC002FAD25 /* Music_pattern Copy.png */; };
+		83E9A6641D2EEFFD002FAD25 /* launchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A6631D2EEFFD002FAD25 /* launchImage.png */; };
+		83E9A6661D2EF102002FAD25 /* 180 - iPhone 6 Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A6651D2EF102002FAD25 /* 180 - iPhone 6 Plus.png */; };
+		83E9A6681D2EF1FC002FAD25 /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A6671D2EF1FC002FAD25 /* icon */; };
+		83E9A66A1D2EF285002FAD25 /* ScrollWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A6691D2EF285002FAD25 /* ScrollWheelView.swift */; };
+		83E9A66C1D2F5335002FAD25 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A66B1D2F5335002FAD25 /* map.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +69,18 @@
 		83E932421D27372C0008047D /* cardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardCellView.swift; sourceTree = "<group>"; };
 		83E932441D27376E0008047D /* CardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
 		83E932461D274EE10008047D /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dummy.json; path = support/dummy.json; sourceTree = "<group>"; };
+		83E9A6551D2ECDB1002FAD25 /* dazeScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dazeScrollView.swift; sourceTree = "<group>"; };
+		83E9A6571D2EE21F002FAD25 /* Event_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Event_pattern.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/Event_pattern.png; sourceTree = "<group>"; };
+		83E9A6581D2EE21F002FAD25 /* Food_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Food_pattern.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/Food_pattern.png; sourceTree = "<group>"; };
+		83E9A6591D2EE21F002FAD25 /* Music_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Music_pattern.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/Music_pattern.png; sourceTree = "<group>"; };
+		83E9A65D1D2EE4BC002FAD25 /* Event_pattern Copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Event_pattern Copy.png"; path = "../../../../../Dropbox/_dailyDesign/160628_DCDaze/Event_pattern Copy.png"; sourceTree = "<group>"; };
+		83E9A65E1D2EE4BC002FAD25 /* Food_pattern Copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Food_pattern Copy.png"; path = "../../../../../Dropbox/_dailyDesign/160628_DCDaze/Food_pattern Copy.png"; sourceTree = "<group>"; };
+		83E9A65F1D2EE4BC002FAD25 /* Music_pattern Copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Music_pattern Copy.png"; path = "../../../../../Dropbox/_dailyDesign/160628_DCDaze/Music_pattern Copy.png"; sourceTree = "<group>"; };
+		83E9A6631D2EEFFD002FAD25 /* launchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launchImage.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/launchImage.png; sourceTree = "<group>"; };
+		83E9A6651D2EF102002FAD25 /* 180 - iPhone 6 Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "180 - iPhone 6 Plus.png"; path = "../../../../../Dropbox/_dailyDesign/160628_DCDaze/180 - iPhone 6 Plus.png"; sourceTree = "<group>"; };
+		83E9A6671D2EF1FC002FAD25 /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/icon; sourceTree = "<group>"; };
+		83E9A6691D2EF285002FAD25 /* ScrollWheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollWheelView.swift; path = ../ScrollWheelView.swift; sourceTree = "<group>"; };
+		83E9A66B1D2F5335002FAD25 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = ../../../../../Desktop/map.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +134,11 @@
 				83E9A6541D2EB399002FAD25 /* Assets */,
 				8359CFAE1D27282100A314EA /* AppDelegate.swift */,
 				8359CFB01D27282100A314EA /* ViewController.swift */,
-				83E932421D27372C0008047D /* cardCellView.swift */,
-				83E932441D27376E0008047D /* CardClass.swift */,
+				83E9A6551D2ECDB1002FAD25 /* dazeScrollView.swift */,
 				8359CFE11D272B3100A314EA /* dayView.swift */,
+				83E932421D27372C0008047D /* cardCellView.swift */,
+				83E9A6691D2EF285002FAD25 /* ScrollWheelView.swift */,
+				83E932441D27376E0008047D /* CardClass.swift */,
 				8359CFB21D27282100A314EA /* Main.storyboard */,
 				8359CFB81D27282100A314EA /* Assets.xcassets */,
 				8359CFBA1D27282100A314EA /* LaunchScreen.storyboard */,
@@ -144,6 +170,16 @@
 		83E9A6541D2EB399002FAD25 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				83E9A66B1D2F5335002FAD25 /* map.png */,
+				83E9A6671D2EF1FC002FAD25 /* icon */,
+				83E9A6631D2EEFFD002FAD25 /* launchImage.png */,
+				83E9A6651D2EF102002FAD25 /* 180 - iPhone 6 Plus.png */,
+				83E9A65D1D2EE4BC002FAD25 /* Event_pattern Copy.png */,
+				83E9A65E1D2EE4BC002FAD25 /* Food_pattern Copy.png */,
+				83E9A65F1D2EE4BC002FAD25 /* Music_pattern Copy.png */,
+				83E9A6571D2EE21F002FAD25 /* Event_pattern.png */,
+				83E9A6581D2EE21F002FAD25 /* Food_pattern.png */,
+				83E9A6591D2EE21F002FAD25 /* Music_pattern.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -253,9 +289,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E9A6611D2EE4BC002FAD25 /* Food_pattern Copy.png in Resources */,
+				83E9A65A1D2EE21F002FAD25 /* Event_pattern.png in Resources */,
 				8359CFBC1D27282100A314EA /* LaunchScreen.storyboard in Resources */,
 				8359CFB91D27282100A314EA /* Assets.xcassets in Resources */,
+				83E9A6601D2EE4BC002FAD25 /* Event_pattern Copy.png in Resources */,
+				83E9A6661D2EF102002FAD25 /* 180 - iPhone 6 Plus.png in Resources */,
+				83E9A65C1D2EE21F002FAD25 /* Music_pattern.png in Resources */,
 				83E932471D274EE10008047D /* dummy.json in Resources */,
+				83E9A6641D2EEFFD002FAD25 /* launchImage.png in Resources */,
+				83E9A65B1D2EE21F002FAD25 /* Food_pattern.png in Resources */,
+				83E9A66C1D2F5335002FAD25 /* map.png in Resources */,
+				83E9A6621D2EE4BC002FAD25 /* Music_pattern Copy.png in Resources */,
+				83E9A6681D2EF1FC002FAD25 /* icon in Resources */,
 				8359CFB41D27282100A314EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,10 +329,12 @@
 			files = (
 				8359CFB11D27282100A314EA /* ViewController.swift in Sources */,
 				8359CFE21D272B3100A314EA /* dayView.swift in Sources */,
+				83E9A6561D2ECDB1002FAD25 /* dazeScrollView.swift in Sources */,
 				83E932451D27376E0008047D /* CardClass.swift in Sources */,
 				8359CFAF1D27282100A314EA /* AppDelegate.swift in Sources */,
 				83E932431D27372C0008047D /* cardCellView.swift in Sources */,
 				8359CFB71D27282100A314EA /* daze_swipe.xcdatamodeld in Sources */,
+				83E9A66A1D2EF285002FAD25 /* ScrollWheelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

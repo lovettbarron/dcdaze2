@@ -42,16 +42,43 @@ class Card {
         desc = unescDesc?.stringByReplacingOccurrencesOfString("\\n", withString:"\n", options:[], range:nil)
     }
     
-    func getCategoryImage() -> UIImage {
+//    func getCategoryImage() -> UIImage {
+//        switch(category) {
+//        case 0 :
+//            return getImageWithColor(UIColor.blueColor(), size: CGSize(width: 100,height: 100))
+//        case 1:
+//            return getImageWithColor(UIColor.cyanColor(), size: CGSize(width: 100,height: 100))
+//        case 2:
+//            return getImageWithColor(UIColor.purpleColor(), size: CGSize(width: 100,height: 100))
+//        default:
+//            return getImageWithColor(UIColor.darkGrayColor(), size: CGSize(width: 100,height: 100))
+//            
+//        }
+//    }
+    
+    func getCategoryColor() -> UIColor {
         switch(category) {
         case 0 :
-            return getImageWithColor(UIColor.blueColor(), size: CGSize(width: 100,height: 100))
+            return UIColor.blueColor()
         case 1:
-            return getImageWithColor(UIColor.cyanColor(), size: CGSize(width: 100,height: 100))
+            return UIColor.cyanColor()
         case 2:
-            return getImageWithColor(UIColor.purpleColor(), size: CGSize(width: 100,height: 100))
+            return UIColor.purpleColor()
         default:
-            return getImageWithColor(UIColor.darkGrayColor(), size: CGSize(width: 100,height: 100))
+            return UIColor.darkGrayColor()
+        }
+    }
+    
+    func getCategoryPattern() -> UIColor {
+        switch(category) {
+        case 0 :
+            return UIColor(patternImage: UIImage(named: "Music_pattern Copy.png")!)
+        case 1:
+            return UIColor(patternImage: UIImage(named: "Food_pattern Copy.png")!)
+        case 2:
+            return UIColor(patternImage: UIImage(named: "Event_pattern Copy.png")!)
+        default:
+            return UIColor(patternImage: UIImage(named: "Event_pattern.png")!)
             
         }
     }
@@ -66,13 +93,12 @@ class Card {
         return image
     }
     
-    
-    
     class func loadCardsFromFile(day:String) -> [Card]
     {
         var cards:[Card] = []
         let path = NSBundle.mainBundle().pathForResource("dummy", ofType: "json")
         var error:NSError? = nil
+        if(error != nil) { print(error) }
         if let data = try? NSData(contentsOfFile: path!, options:[]),
             json = try? NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary,
             card = json![day] as? [NSDictionary] {

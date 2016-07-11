@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class todayView: UITableViewController {
+class dayView: UITableViewController {
     
     
     var cards: [Card] = [Card]()
+    var dayType: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +23,21 @@ class todayView: UITableViewController {
         
         // appearance and layout customization
         tableView.estimatedRowHeight = 280
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.scrollEnabled = false
         tableView.alwaysBounceVertical = false
-        cards = Card.loadCardsFromFile("today")
+        cards = Card.loadCardsFromFile(dayType)
+        print(dayType,tableView.frame)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CardClass", forIndexPath: indexPath) as! cardCellView
         let card = cards[indexPath.row]
+        
+        var tableRect = self.view.frame;
+        tableRect.size.width = UIScreen.mainScreen().bounds.width
+        tableView.frame = tableRect;
+        
         cell.useCard(card)
         print(cell.nameLabel)
         return cell
@@ -54,10 +61,18 @@ class todayView: UITableViewController {
         tableView.reloadData()
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You Tapped ", indexPath)
+    }
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if self.tableView.editing {return .Delete}
+        return .None
+    }
     
     
 }
