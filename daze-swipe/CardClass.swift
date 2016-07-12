@@ -59,11 +59,11 @@ class Card {
     func getCategoryColor() -> UIColor {
         switch(category) {
         case 0 :
-            return UIColor.blueColor()
+            return UIColor(red:0.90, green:0.97, blue:0.93, alpha:1.0)
         case 1:
-            return UIColor.cyanColor()
+            return UIColor(red:0.90, green:0.92, blue:0.97, alpha:1.0)
         case 2:
-            return UIColor.purpleColor()
+            return UIColor(red:0.97, green:0.90, blue:0.96, alpha:1.0)
         default:
             return UIColor.darkGrayColor()
         }
@@ -97,7 +97,7 @@ class Card {
     {
         var cards:[Card] = []
         let path = NSBundle.mainBundle().pathForResource("dummy", ofType: "json")
-        var error:NSError? = nil
+        let error:NSError? = nil
         if(error != nil) { print(error) }
         if let data = try? NSData(contentsOfFile: path!, options:[]),
             json = try? NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary,

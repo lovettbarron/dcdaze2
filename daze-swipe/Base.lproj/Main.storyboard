@@ -33,11 +33,11 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-Vb-TTt">
                                                     <rect key="frame" x="0.0" y="22" width="340" height="138"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-y6-tGk">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-y6-tGk" userLabel="textbg">
                                                     <rect key="frame" x="0.0" y="22" width="240" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l52-zA-nTW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="278" height="40"/>
+                                                            <rect key="frame" x="20" y="0.0" width="278" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="L7Y-jk-OuI"/>
                                                                 <constraint firstAttribute="width" constant="278" id="kxw-W2-mpe"/>
@@ -46,14 +46,13 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHb-Ae-ph0">
-                                                            <rect key="frame" x="32" y="40" width="200" height="70"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Time and Location" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHb-Ae-ph0">
+                                                            <rect key="frame" x="20" y="40" width="200" height="70"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="200" id="39F-y1-86N"/>
                                                                 <constraint firstAttribute="height" constant="70" id="h8H-x0-R8m"/>
                                                             </constraints>
-                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -68,8 +67,8 @@
                                                         <constraint firstItem="AHb-Ae-ph0" firstAttribute="top" secondItem="l52-zA-nTW" secondAttribute="bottom" id="V8h-EP-t5r"/>
                                                         <constraint firstItem="AHb-Ae-ph0" firstAttribute="top" secondItem="l52-zA-nTW" secondAttribute="bottom" id="awX-bu-mC6"/>
                                                         <constraint firstAttribute="height" constant="100" id="bSG-Cg-65L"/>
-                                                        <constraint firstItem="l52-zA-nTW" firstAttribute="leading" secondItem="mDg-y6-tGk" secondAttribute="leading" id="onq-PL-fxU"/>
-                                                        <constraint firstAttribute="trailing" secondItem="AHb-Ae-ph0" secondAttribute="trailing" constant="8" id="wpD-mX-agG"/>
+                                                        <constraint firstItem="l52-zA-nTW" firstAttribute="leading" secondItem="mDg-y6-tGk" secondAttribute="leading" constant="20" id="onq-PL-fxU"/>
+                                                        <constraint firstItem="AHb-Ae-ph0" firstAttribute="leading" secondItem="mDg-y6-tGk" secondAttribute="leading" constant="20" id="wpD-mX-agG"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -129,6 +128,7 @@
                                     <outlet property="mainView" destination="RpO-hs-1d7" id="pOe-Dk-dSD"/>
                                     <outlet property="mapView" destination="a8m-Vb-TTt" id="BSQ-WN-BuO"/>
                                     <outlet property="nameLabel" destination="l52-zA-nTW" id="iXW-Mc-uC3"/>
+                                    <outlet property="textBgView" destination="mDg-y6-tGk" id="nt6-mf-bbr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

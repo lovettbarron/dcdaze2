@@ -18,6 +18,7 @@ class cardCellView: UITableViewCell {
     @IBOutlet var categoryImage: UIImageView!
     @IBOutlet var cardView: UIView!
     @IBOutlet var mapView: UIImageView!
+    @IBOutlet var textBgView: UIView!
     
     func useCard(card:Card) {
         // Fix the #()@#$ constraint
@@ -37,6 +38,7 @@ class cardCellView: UITableViewCell {
         // Fill in the data
         nameLabel.text = card.name
         descLabel.text = card.desc
+        textBgView.layer.backgroundColor = card.getCategoryColor().CGColor
         categoryImage.layer.backgroundColor = card.getCategoryPattern().CGColor
         drawCardDetails()
         mapView = UIImageView(image: UIImage(named:"map.png"))

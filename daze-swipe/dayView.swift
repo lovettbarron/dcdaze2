@@ -73,6 +73,47 @@ class dayView: UITableViewController {
         if self.tableView.editing {return .Delete}
         return .None
     }
+
     
+    func animateTableFromRight() {
+        tableView.reloadData()
+        
+        let cells = tableView.visibleCells
+        let tableHeight: CGFloat = tableView.bounds.size.height
+        
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+        }
+        
+        var index = 0
+        
+        for a in cells {
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [.Repeat, .CurveEaseOut, .Autoreverse], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+                }, completion: nil)
+            
+            index += 1
+        }
+    }
+    
+    func animateTableFromTop() {
+        
+    }
+    
+    func animateTableBlinkIn() {
+        
+    }
+    
+//    func setupGestureRecognizer() {
+//        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dayView.handleDoubleTap(_:)))
+//        doubleTap.numberOfTapsRequired = 2
+//        self.view.addGestureRecognizer(doubleTap)
+//    }
+//    
+//    func handleDoubleTap(recognizer: UITapGestureRecognizer) {
+//      
+//    }
     
 }
