@@ -16,6 +16,7 @@ class DazeScrollView: UIScrollView, UIScrollViewDelegate {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         super.delegate = self
+        print("ScrollViewIsActuallyWorking")
     }
     
     override init(frame: CGRect) {

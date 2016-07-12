@@ -34,7 +34,7 @@ class Card {
     init(dictionary:NSDictionary) {
         category = dictionary["category"]   as? Int
         name = dictionary["name"]           as? String
-        location = dictionary["location"]   as? String
+        location = dictionary["loc"]   as? String
         time = dictionary["time"]           as? String
         
         // fixup the about text to add newlines

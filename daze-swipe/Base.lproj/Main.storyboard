@@ -4,6 +4,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="DroidSans.ttf">
+            <string>DroidSans</string>
+            <string>DroidSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Day View-->
         <scene sceneID="sbd-Pf-Lwt">
@@ -34,15 +40,15 @@
                                                     <rect key="frame" x="0.0" y="22" width="340" height="138"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-y6-tGk" userLabel="textbg">
-                                                    <rect key="frame" x="0.0" y="22" width="240" height="100"/>
+                                                    <rect key="frame" x="0.0" y="40" width="240" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l52-zA-nTW">
-                                                            <rect key="frame" x="20" y="0.0" width="278" height="40"/>
+                                                            <rect key="frame" x="20" y="0.0" width="220" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="L7Y-jk-OuI"/>
-                                                                <constraint firstAttribute="width" constant="278" id="kxw-W2-mpe"/>
+                                                                <constraint firstAttribute="width" constant="220" id="kxw-W2-mpe"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <fontDescription key="fontDescription" name="DroidSans" family="Droid Sans" pointSize="24"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -53,7 +59,7 @@
                                                                 <constraint firstAttribute="width" constant="200" id="39F-y1-86N"/>
                                                                 <constraint firstAttribute="height" constant="70" id="h8H-x0-R8m"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="DroidSans" family="Droid Sans" pointSize="20"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                     </subviews>
@@ -83,7 +89,7 @@
                                                 <constraint firstItem="eQN-PD-06c" firstAttribute="leading" secondItem="viL-bg-3ux" secondAttribute="leading" id="7R9-bc-hni"/>
                                                 <constraint firstAttribute="width" constant="340" id="A0s-Su-WDK"/>
                                                 <constraint firstItem="a8m-Vb-TTt" firstAttribute="leading" secondItem="viL-bg-3ux" secondAttribute="leading" id="IMW-Ac-wMu"/>
-                                                <constraint firstItem="mDg-y6-tGk" firstAttribute="top" secondItem="viL-bg-3ux" secondAttribute="top" constant="22" id="KfC-cV-mid"/>
+                                                <constraint firstItem="mDg-y6-tGk" firstAttribute="top" secondItem="viL-bg-3ux" secondAttribute="top" constant="40" id="KfC-cV-mid"/>
                                                 <constraint firstItem="mDg-y6-tGk" firstAttribute="leading" secondItem="viL-bg-3ux" secondAttribute="leading" id="LUm-QJ-Jey"/>
                                                 <constraint firstAttribute="trailing" secondItem="eQN-PD-06c" secondAttribute="trailing" id="MXl-eZ-uJ5"/>
                                                 <constraint firstItem="a8m-Vb-TTt" firstAttribute="top" secondItem="viL-bg-3ux" secondAttribute="top" constant="22" id="asA-35-JWD"/>

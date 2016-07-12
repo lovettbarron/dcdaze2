@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: DazeScrollView!
     
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     
     let bounds = UIScreen.mainScreen().bounds
+    
+    var activeView: UIView!
     
     // Instantiate all the views
     let ListOfViews = [
@@ -25,10 +27,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("LOADED SCROLL VIEW")
         // Do any additional setup after loading the view, typically from a nib.
         
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.loadViewIfNeeded()
+        
         for (page, order) in ListOfViews {
             let view = storyboard.instantiateViewControllerWithIdentifier("dayView") as! dayView
             view.dayType = page
@@ -44,15 +50,14 @@ class ViewController: UIViewController {
             // Binding to parent
             presentViewController(view, animated: true, completion: nil)
 //            addChildViewController(view)
-            scrollView.addSubview(view.view)
+            scrollView.insertSubview(view.view, atIndex: order)
             view.didMoveToParentViewController(self)
             print("Creating table ",page)
         }
         
         scrollView.addGestureRecognizer(scrollView.panGestureRecognizer)
-        
         scrollView.contentSize = CGSizeMake(bounds.size.width*CGFloat(ListOfViews.count), 1.0)
-
+        scrollView.setNeedsDisplay()
         // Set up the constraints
 //        for (view) in scrollView.subviews {
 //            
@@ -74,11 +79,12 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
+        print("ScrollView Did Appear")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        print("Did recieve a memory warning")
         // Dispose of any resources that can be recreated.
     }
     
@@ -140,6 +146,17 @@ class ViewController: UIViewController {
         print("Calling cell :",cell.reuseIdentifier)
         
         return cell
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let width = UIScreen.mainScreen().bounds.width
+        let page = Int((scrollView.contentOffset.x+(width/2)) / (width)) // Forces "halfway" page change
+        print("Did Scroll on page",page)
+        activeView = scrollView.subviews[page >= 0 && page < ListOfViews.count ? page : 1 ]
     }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8304ACEC1D35643800E149CA /* KnockHTF52Cru in Resources */ = {isa = PBXBuildFile; fileRef = 8304ACEB1D35643800E149CA /* KnockHTF52Cru */; };
 		8359CFAF1D27282100A314EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFAE1D27282100A314EA /* AppDelegate.swift */; };
 		8359CFB11D27282100A314EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFB01D27282100A314EA /* ViewController.swift */; };
 		8359CFB41D27282100A314EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8359CFB21D27282100A314EA /* Main.storyboard */; };
@@ -51,6 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8304ACEB1D35643800E149CA /* KnockHTF52Cru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = KnockHTF52Cru; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Print Fonts/Knockout/Knockout/KnockHTF52Cru"; sourceTree = "<group>"; };
+		8304ACED1D35646100E149CA /* DroidSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSans-Bold.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSans-Bold.ttf"; sourceTree = "<group>"; };
+		8304ACEE1D35646100E149CA /* DroidSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DroidSans.ttf; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSans.ttf"; sourceTree = "<group>"; };
+		8304ACEF1D35646100E149CA /* DroidSansFallback.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DroidSansFallback.ttf; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSansFallback.ttf"; sourceTree = "<group>"; };
+		8304ACF01D35646100E149CA /* DroidSansJapanese.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DroidSansJapanese.ttf; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSansJapanese.ttf"; sourceTree = "<group>"; };
+		8304ACF11D35646100E149CA /* DroidSansMono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DroidSansMono.ttf; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSansMono.ttf"; sourceTree = "<group>"; };
+		8304ACF21D35646100E149CA /* DroidSerif-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-Bold.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-Bold.ttf"; sourceTree = "<group>"; };
+		8304ACF31D35646100E149CA /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-BoldItalic.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
+		8304ACF41D35646100E149CA /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-Italic.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
+		8304ACF51D35646100E149CA /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-Regular.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
 		8359CFAB1D27282100A314EA /* daze-swipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daze-swipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8359CFAE1D27282100A314EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8359CFB01D27282100A314EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8304ACEA1D35641600E149CA /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8304ACED1D35646100E149CA /* DroidSans-Bold.ttf */,
+				8304ACEE1D35646100E149CA /* DroidSans.ttf */,
+				8304ACEF1D35646100E149CA /* DroidSansFallback.ttf */,
+				8304ACF01D35646100E149CA /* DroidSansJapanese.ttf */,
+				8304ACF11D35646100E149CA /* DroidSansMono.ttf */,
+				8304ACF21D35646100E149CA /* DroidSerif-Bold.ttf */,
+				8304ACF31D35646100E149CA /* DroidSerif-BoldItalic.ttf */,
+				8304ACF41D35646100E149CA /* DroidSerif-Italic.ttf */,
+				8304ACF51D35646100E149CA /* DroidSerif-Regular.ttf */,
+				8304ACEB1D35643800E149CA /* KnockHTF52Cru */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
 		8359CFA21D27282100A314EA = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +159,6 @@
 		8359CFAD1D27282100A314EA /* daze-swipe */ = {
 			isa = PBXGroup;
 			children = (
-				83E9A6541D2EB399002FAD25 /* Assets */,
 				8359CFAE1D27282100A314EA /* AppDelegate.swift */,
 				8359CFB01D27282100A314EA /* ViewController.swift */,
 				83E9A6551D2ECDB1002FAD25 /* dazeScrollView.swift */,
@@ -145,6 +172,7 @@
 				8359CFBD1D27282100A314EA /* Info.plist */,
 				8359CFB51D27282100A314EA /* daze_swipe.xcdatamodeld */,
 				83E932461D274EE10008047D /* dummy.json */,
+				83E9A6541D2EB399002FAD25 /* Assets */,
 			);
 			path = "daze-swipe";
 			sourceTree = "<group>";
@@ -170,6 +198,7 @@
 		83E9A6541D2EB399002FAD25 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8304ACEA1D35641600E149CA /* fonts */,
 				83E9A66B1D2F5335002FAD25 /* map.png */,
 				83E9A6671D2EF1FC002FAD25 /* icon */,
 				83E9A6631D2EEFFD002FAD25 /* launchImage.png */,
@@ -301,6 +330,7 @@
 				83E9A65B1D2EE21F002FAD25 /* Food_pattern.png in Resources */,
 				83E9A66C1D2F5335002FAD25 /* map.png in Resources */,
 				83E9A6621D2EE4BC002FAD25 /* Music_pattern Copy.png in Resources */,
+				8304ACEC1D35643800E149CA /* KnockHTF52Cru in Resources */,
 				83E9A6681D2EF1FC002FAD25 /* icon in Resources */,
 				8359CFB41D27282100A314EA /* Main.storyboard in Resources */,
 			);

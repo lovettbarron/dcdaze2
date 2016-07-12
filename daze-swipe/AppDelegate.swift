@@ -13,10 +13,17 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var viewController: UIViewController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let scrollView = storyboard.instantiateViewControllerWithIdentifier("ScrollView") as! UIViewController
+        window?.rootViewController = scrollView
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

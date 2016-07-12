@@ -37,9 +37,14 @@ class cardCellView: UITableViewCell {
 
         // Fill in the data
         nameLabel.text = card.name
-        descLabel.text = card.desc
+        nameLabel.font = UIFont(name: "KnockHTF52Cru", size: 34)
+
+        
+        descLabel.text = card.time + "\n" + card.location
         textBgView.layer.backgroundColor = card.getCategoryColor().CGColor
+        textBgView.layer.zPosition = 1
         categoryImage.layer.backgroundColor = card.getCategoryPattern().CGColor
+        categoryImage.layer.zPosition = 2
         drawCardDetails()
         mapView = UIImageView(image: UIImage(named:"map.png"))
 //        centerMapOnLocation()
