@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="DroidSans.ttf">
@@ -168,19 +170,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="bQW-xw-6Lu">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="bQW-xw-6Lu" customClass="DazeScrollView" customModule="daze_swipe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="6GH-6m-cIR" id="kdR-Gk-Oni"/>
                                 </connections>
                             </scrollView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1O-wT-tjd" customClass="ScrollWheelView" customModule="daze_swipe" customModuleProvider="target">
+                                <rect key="frame" x="40" y="550" width="520" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-mV-idf">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="520"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="a7b-mV-idf" secondAttribute="height" multiplier="1:1" id="Ugd-ZS-m9o"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="a7b-mV-idf" firstAttribute="centerX" secondItem="s1O-wT-tjd" secondAttribute="centerX" id="7yB-M4-3E4"/>
+                                    <constraint firstAttribute="trailing" secondItem="a7b-mV-idf" secondAttribute="trailing" id="9qJ-Az-sN5"/>
+                                    <constraint firstAttribute="height" constant="50" id="Mz2-Vf-LnM"/>
+                                    <constraint firstItem="a7b-mV-idf" firstAttribute="top" secondItem="s1O-wT-tjd" secondAttribute="top" id="eoh-MO-T4p"/>
+                                    <constraint firstItem="a7b-mV-idf" firstAttribute="leading" secondItem="s1O-wT-tjd" secondAttribute="leading" id="wFj-pT-oYc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="scrollView" destination="bQW-xw-6Lu" id="uBt-fl-cly"/>
+                                    <outlet property="scrollWheel" destination="a7b-mV-idf" id="1Fx-07-7bD"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="bQW-xw-6Lu" secondAttribute="top" id="7VO-jW-gEJ"/>
                             <constraint firstAttribute="trailing" secondItem="bQW-xw-6Lu" secondAttribute="trailing" id="GCN-dA-ZdW"/>
                             <constraint firstAttribute="leading" secondItem="bQW-xw-6Lu" secondAttribute="leading" id="KZn-eo-EMh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s1O-wT-tjd" secondAttribute="trailing" constant="20" id="ZcC-sh-Ba2"/>
                             <constraint firstAttribute="bottom" secondItem="bQW-xw-6Lu" secondAttribute="bottom" id="eLr-KN-TNz"/>
+                            <constraint firstItem="s1O-wT-tjd" firstAttribute="leading" secondItem="fkM-f1-mbm" secondAttribute="leadingMargin" constant="20" id="qnN-4z-eE3"/>
+                            <constraint firstItem="mUg-IW-A32" firstAttribute="top" secondItem="s1O-wT-tjd" secondAttribute="bottom" id="tdc-tH-lsh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="30J-aY-mfD"/>
@@ -192,12 +223,13 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="scrollView" destination="bQW-xw-6Lu" id="Y2Q-pc-d4J"/>
+                        <outlet property="scrollWheel" destination="s1O-wT-tjd" id="sbi-W8-hnZ"/>
                         <outlet property="view" destination="bQW-xw-6Lu" id="n7V-1q-vND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXS-fT-vvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-760" y="-2731"/>
+            <point key="canvasLocation" x="-722" y="-2673"/>
         </scene>
     </scenes>
 </document>

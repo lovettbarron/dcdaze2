@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8304ACEC1D35643800E149CA /* KnockHTF52Cru in Resources */ = {isa = PBXBuildFile; fileRef = 8304ACEB1D35643800E149CA /* KnockHTF52Cru */; };
+		8304ACF71D36A5DA00E149CA /* ScrollWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8304ACF61D36A5DA00E149CA /* ScrollWheel.png */; };
 		8359CFAF1D27282100A314EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFAE1D27282100A314EA /* AppDelegate.swift */; };
 		8359CFB11D27282100A314EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFB01D27282100A314EA /* ViewController.swift */; };
 		8359CFB41D27282100A314EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8359CFB21D27282100A314EA /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		8304ACF31D35646100E149CA /* DroidSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-BoldItalic.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		8304ACF41D35646100E149CA /* DroidSerif-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-Italic.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-Italic.ttf"; sourceTree = "<group>"; };
 		8304ACF51D35646100E149CA /* DroidSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DroidSerif-Regular.ttf"; path = "../../../../../Dropbox/_Design Resources/Design Assets/Design/Fonts/Android/Droid/DroidSerif-Regular.ttf"; sourceTree = "<group>"; };
+		8304ACF61D36A5DA00E149CA /* ScrollWheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ScrollWheel.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/ScrollWheel.png; sourceTree = "<group>"; };
 		8359CFAB1D27282100A314EA /* daze-swipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "daze-swipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8359CFAE1D27282100A314EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8359CFB01D27282100A314EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				8304ACEA1D35641600E149CA /* fonts */,
 				83E9A66B1D2F5335002FAD25 /* map.png */,
+				8304ACF61D36A5DA00E149CA /* ScrollWheel.png */,
 				83E9A6671D2EF1FC002FAD25 /* icon */,
 				83E9A6631D2EEFFD002FAD25 /* launchImage.png */,
 				83E9A6651D2EF102002FAD25 /* 180 - iPhone 6 Plus.png */,
@@ -324,6 +327,7 @@
 				8359CFB91D27282100A314EA /* Assets.xcassets in Resources */,
 				83E9A6601D2EE4BC002FAD25 /* Event_pattern Copy.png in Resources */,
 				83E9A6661D2EF102002FAD25 /* 180 - iPhone 6 Plus.png in Resources */,
+				8304ACF71D36A5DA00E149CA /* ScrollWheel.png in Resources */,
 				83E9A65C1D2EE21F002FAD25 /* Music_pattern.png in Resources */,
 				83E932471D274EE10008047D /* dummy.json in Resources */,
 				83E9A6641D2EEFFD002FAD25 /* launchImage.png in Resources */,

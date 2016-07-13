@@ -24,9 +24,6 @@ class DazeScrollView: UIScrollView, UIScrollViewDelegate {
         super.delegate = self
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let page = scrollView.contentOffset.x / UIScreen.mainScreen().bounds.width
-        print("On Page ", page)
-    }
+    
  
 }

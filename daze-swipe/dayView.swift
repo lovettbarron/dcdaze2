@@ -173,7 +173,7 @@ class dayView: UITableViewController {
     
     func animateTableBlinkIn(loading:Bool) {
         //        tableView.reloadData()
-        
+        print("BlickAnimation",loading)
         let cells = tableView.visibleCells
         
         for i in cells {

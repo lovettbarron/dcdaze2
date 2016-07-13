@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: DazeScrollView!
+    @IBOutlet weak var scrollWheel: ScrollWheelView!
     
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     
@@ -31,7 +32,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         print("LOADED SCROLL VIEW")
         prevPage = 1
         // Do any additional setup after loading the view, typically from a nib.
-        
         
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
         self.loadViewIfNeeded()
@@ -57,6 +57,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             print("Creating table ",page)
         }
         
+        scrollWheel.scrollWheel.image = UIImage(named:"ScrollWheel.png")
+        
         scrollView.addGestureRecognizer(scrollView.panGestureRecognizer)
         scrollView.contentSize = CGSizeMake(bounds.size.width*CGFloat(ListOfViews.count), 1.0)
         scrollView.setNeedsDisplay()
@@ -81,6 +83,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        scrollView.layer.zPosition = 0
+        scrollWheel.layer.zPosition = 1
         print("ScrollView Did Appear")
     }
 
@@ -153,11 +157,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+
+////        Return to this at some point... This is ridiculous
+//        let a = childViewControllers[0] as? dayView
+//        let b = childViewControllers[1] as? dayView
+//        let c = childViewControllers[2] as? dayView
+//        print(a!.dayType,b!.dayType,c!.dayType)
         
-        let a = childViewControllers[0] as? dayView
-        let b = childViewControllers[1] as? dayView
-        let c = childViewControllers[2] as? dayView
-        print(a!.dayType,b!.dayType,c!.dayType)
+        // Rotate scrollWheel to match view
+        // (.5*2-1.0)*90 -> for positioning the view
+        scrollWheel.rotate(Int((scrollView.contentOffset.x/scrollView.bounds.width)-1.0)*90)
+        
         
         let width = UIScreen.mainScreen().bounds.width
         var page = Int((scrollView.contentOffset.x+(width/2)) / (width)) // Forces "halfway" page change
