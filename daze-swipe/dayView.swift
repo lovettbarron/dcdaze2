@@ -14,6 +14,8 @@ class dayView: UITableViewController {
     
     var cards: [Card] = [Card]()
     var dayType: String!
+    var order:Int!
+    var selectedCard:Card! = nil
 
     
     override func viewDidLoad() {
@@ -69,13 +71,10 @@ class dayView: UITableViewController {
     }
     
     
-//    
-//    override func viewWillAppear(animated: Bool) {
-//        tableView.reloadData()
-//    }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You Tapped ", indexPath)
+        selectedCard = cards[indexPath.row]
+        performSegueWithIdentifier("openCard", sender: self)
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -86,7 +85,21 @@ class dayView: UITableViewController {
         if self.tableView.editing {return .Delete}
         return .None
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as! cardCellView
+        if (segue.identifier == "openCard") {
+            let controller = segue.destinationViewController as! CardViewController
+            controller.card = cell.viewCard
+        }
+        
+    }
 
+    
+    
+    //////////////////////////
+    ////// ALL ANIMATION /////
+    //////////////////////////
     
     func animateTableLoading() {
         print("Loading",dayType)
@@ -194,6 +207,8 @@ class dayView: UITableViewController {
         }
 
     }
+    
+    
     
 //    func setupGestureRecognizer() {
 //        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dayView.handleDoubleTap(_:)))

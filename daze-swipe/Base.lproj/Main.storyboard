@@ -10,6 +10,8 @@
         <mutableArray key="DroidSans.ttf">
             <string>DroidSans</string>
             <string>DroidSans</string>
+            <string>DroidSans</string>
+            <string>DroidSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -137,6 +139,7 @@
                                     <outlet property="mapView" destination="a8m-Vb-TTt" id="BSQ-WN-BuO"/>
                                     <outlet property="nameLabel" destination="l52-zA-nTW" id="iXW-Mc-uC3"/>
                                     <outlet property="textBgView" destination="mDg-y6-tGk" id="nt6-mf-bbr"/>
+                                    <segue destination="Rhj-Cq-Tnf" kind="presentation" identifier="openCard" id="fPV-FJ-ue0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,6 +160,135 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4W-vh-ty7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-947" y="-1533"/>
+        </scene>
+        <!--Card View Controller-->
+        <scene sceneID="a0r-VQ-zwP">
+            <objects>
+                <viewController id="Rhj-Cq-Tnf" customClass="CardViewController" customModule="daze_swipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mkX-rg-yKm"/>
+                        <viewControllerLayoutGuide type="bottom" id="5l5-M3-lyN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8ok-sm-hPg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="WEN-Ln-yof">
+                                <rect key="frame" x="37" y="68" width="340" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kym-GE-cJN">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="7Bh-gB-Wza"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ce-DM-NdD" userLabel="textbg">
+                                        <rect key="frame" x="70" y="40" width="200" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWj-Ia-h8x">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="SmU-cU-mAY"/>
+                                                    <constraint firstAttribute="width" constant="220" id="t19-lm-Vgv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="DroidSans" family="Droid Sans" pointSize="24"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="t19-lm-Vgv"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.6379849138" colorSpace="calibratedWhite"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstItem="VWj-Ia-h8x" firstAttribute="leading" secondItem="5Ce-DM-NdD" secondAttribute="leading" id="T0D-b8-Cl9"/>
+                                            <constraint firstAttribute="trailing" secondItem="VWj-Ia-h8x" secondAttribute="trailing" constant="-20" id="UGW-wR-ziN"/>
+                                            <constraint firstItem="VWj-Ia-h8x" firstAttribute="centerX" secondItem="5Ce-DM-NdD" secondAttribute="centerX" id="W2n-jh-h3c"/>
+                                            <constraint firstItem="VWj-Ia-h8x" firstAttribute="top" secondItem="5Ce-DM-NdD" secondAttribute="top" id="ggb-vh-g8u"/>
+                                            <constraint firstAttribute="width" constant="200" id="iNK-EJ-FZZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="m8Y-zc-4AF"/>
+                                            <constraint firstItem="VWj-Ia-h8x" firstAttribute="leading" secondItem="5Ce-DM-NdD" secondAttribute="leading" constant="20" id="vaR-nW-QX6"/>
+                                            <constraint firstItem="VWj-Ia-h8x" firstAttribute="top" secondItem="5Ce-DM-NdD" secondAttribute="top" id="zep-4d-MOi"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="UGW-wR-ziN"/>
+                                                <exclude reference="vaR-nW-QX6"/>
+                                                <exclude reference="zep-4d-MOi"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tBt-oJ-2cu">
+                                        <rect key="frame" x="0.0" y="395" width="340" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="bOv-Fu-MBQ"/>
+                                        </constraints>
+                                    </mapView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Time and Location" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rd5-5b-Ehl">
+                                        <rect key="frame" x="70" y="130" width="200" height="70"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="RwO-5g-2Sj"/>
+                                            <constraint firstAttribute="height" constant="70" id="XqA-xu-QB7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DroidSans" family="Droid Sans" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kym-GE-cJN" firstAttribute="top" secondItem="WEN-Ln-yof" secondAttribute="top" id="3yE-NS-EQo"/>
+                                    <constraint firstItem="5Ce-DM-NdD" firstAttribute="centerX" secondItem="WEN-Ln-yof" secondAttribute="centerX" id="470-Tk-JRr"/>
+                                    <constraint firstItem="rd5-5b-Ehl" firstAttribute="top" secondItem="5Ce-DM-NdD" secondAttribute="bottom" constant="50" id="5ts-uO-rdL"/>
+                                    <constraint firstAttribute="width" constant="320" identifier="cellWidth" id="8ob-CC-RkF"/>
+                                    <constraint firstAttribute="trailing" secondItem="kym-GE-cJN" secondAttribute="trailing" id="94x-2o-Vi0"/>
+                                    <constraint firstAttribute="height" priority="250" constant="600" id="CJo-Kq-pfi">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="tBt-oJ-2cu" secondAttribute="bottom" constant="77" id="Cs0-ds-fWw"/>
+                                    <constraint firstAttribute="width" constant="340" id="FYZ-ML-b0s"/>
+                                    <constraint firstItem="kym-GE-cJN" firstAttribute="leading" secondItem="WEN-Ln-yof" secondAttribute="leading" id="Pgb-vp-Bsi"/>
+                                    <constraint firstAttribute="trailing" secondItem="tBt-oJ-2cu" secondAttribute="trailing" id="UmJ-Gk-6Qu"/>
+                                    <constraint firstItem="5Ce-DM-NdD" firstAttribute="top" secondItem="WEN-Ln-yof" secondAttribute="top" constant="40" id="rTj-Qm-bMF"/>
+                                    <constraint firstItem="rd5-5b-Ehl" firstAttribute="centerX" secondItem="WEN-Ln-yof" secondAttribute="centerX" id="u1A-Qu-0jr"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Ce-DM-NdD" secondAttribute="trailing" constant="100" id="uEW-PA-buE"/>
+                                    <constraint firstItem="tBt-oJ-2cu" firstAttribute="leading" secondItem="WEN-Ln-yof" secondAttribute="leading" id="zjY-Xf-22N"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8ob-CC-RkF"/>
+                                        <exclude reference="uEW-PA-buE"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WEN-Ln-yof" firstAttribute="centerX" secondItem="8ok-sm-hPg" secondAttribute="centerX" id="BkP-wD-OLB"/>
+                            <constraint firstItem="WEN-Ln-yof" firstAttribute="centerY" secondItem="8ok-sm-hPg" secondAttribute="centerY" id="Kxj-3k-2JK"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="cardBorderColor" destination="8ok-sm-hPg" id="eaZ-pq-9e9"/>
+                        <outlet property="categoryImage" destination="kym-GE-cJN" id="1VS-ly-8BU"/>
+                        <outlet property="descLabel" destination="rd5-5b-Ehl" id="gRt-dG-nFC"/>
+                        <outlet property="mainView" destination="WEN-Ln-yof" id="sdW-YB-cwT"/>
+                        <outlet property="mapView" destination="tBt-oJ-2cu" id="izY-DO-53R"/>
+                        <outlet property="nameLabel" destination="VWj-Ia-h8x" id="bbf-1K-arl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxI-5k-3pQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-342" y="-1533"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RrP-3K-6a4">

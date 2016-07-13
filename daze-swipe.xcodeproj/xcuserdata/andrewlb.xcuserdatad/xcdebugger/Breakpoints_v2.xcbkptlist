@@ -113,5 +113,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "daze-swipe/CardViewController.swift"
+            timestampString = "490139733.809928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "CardViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.CardViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; daze_swipe.CardViewController"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/CardViewController.swift"
+                  timestampString = "490139864.559205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.CardViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;daze_swipe.CardViewController&gt;"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/CardViewController.swift"
+                  timestampString = "490139864.559451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

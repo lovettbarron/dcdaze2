@@ -20,7 +20,10 @@ class cardCellView: UITableViewCell {
     @IBOutlet var mapView: UIImageView!
     @IBOutlet var textBgView: UIView!
     
+    var viewCard:Card!
+    
     func useCard(card:Card) {
+        viewCard = card
         // Fix the #()@#$ constraint
         
 //        let widthConstraint = NSLayoutConstraint(

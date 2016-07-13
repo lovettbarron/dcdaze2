@@ -39,6 +39,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         for (page, order) in ListOfViews {
             let view = storyboard.instantiateViewControllerWithIdentifier("dayView") as! dayView
             view.dayType = page
+            view.order = order
             var frame = view.view.frame
             frame.origin.x = bounds.size.width * CGFloat(order)
             frame.size.width = bounds.size.width
@@ -172,8 +173,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let width = UIScreen.mainScreen().bounds.width
         var page = Int((scrollView.contentOffset.x+(width/2)) / (width)) // Forces "halfway" page change
         
-        if(page == 1 ) { page = 2 }
-        else if(page == 2) { page = 1}
+        // FIX THIS LATER: Using order in day-view
+        if(page == 1 ) { page = 2 } //
+        else if(page == 2) { page = 1} //
+        // FIX THIS LATER
         
         if(prevPage != page) {
             print("Did Scroll to page",page, "from",prevPage)
