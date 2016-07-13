@@ -10,45 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daze-swipe/ViewController.swift"
-            timestampString = "490050178.331865"
+            timestampString = "490070607.639088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "moveScrollPointToPage(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "daze_swipe.ViewController.moveScrollPointToPage (Swift.Int) -&gt; ()"
-                  moduleName = "daze-swipe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/ViewController.swift"
-                  timestampString = "490044072.69898"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "337">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "daze_swipe.ViewController.moveScrollPointToPage (Swift.Int) -&gt; ()"
-                  moduleName = "daze-swipe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/ViewController.swift"
-                  timestampString = "490044072.699165"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "99"
-                  endingLineNumber = "99"
-                  offsetFromSymbolStart = "350">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -127,6 +95,22 @@
                   offsetFromSymbolStart = "146">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "daze-swipe/dayView.swift"
+            timestampString = "490067902.200314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "dayView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

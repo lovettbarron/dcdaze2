@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
+
 class dayView: UITableViewController {
-    
     
     var cards: [Card] = [Card]()
     var dayType: String!
@@ -25,7 +25,6 @@ class dayView: UITableViewController {
         
         // appearance and layout customization
         tableView.estimatedRowHeight = 280
-//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.scrollEnabled = false
         tableView.alwaysBounceVertical = false
         cards = Card.loadCardsFromFile(dayType)
@@ -36,22 +35,14 @@ class dayView: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         print("viewDidAppear",dayType)
-        enteringPage()
+        animateTableLoading()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewDidAppear(true)
-        leavingPage()
-    }
-    
-    func leavingPage() {
         animateTableUnloading()
     }
-    
-    func enteringPage() {
-        animateTableLoading()
-    }
-    
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CardClass", forIndexPath: indexPath) as! cardCellView
         let card = cards[indexPath.row]
@@ -61,7 +52,7 @@ class dayView: UITableViewController {
         tableView.frame = tableRect;
         
         cell.useCard(card)
-        print(cell.nameLabel)
+//        print(cell.nameLabel)
         return cell
     }
     
@@ -78,10 +69,10 @@ class dayView: UITableViewController {
     }
     
     
-    
-    override func viewWillAppear(animated: Bool) {
-        tableView.reloadData()
-    }
+//    
+//    override func viewWillAppear(animated: Bool) {
+//        tableView.reloadData()
+//    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You Tapped ", indexPath)
@@ -98,42 +89,110 @@ class dayView: UITableViewController {
 
     
     func animateTableLoading() {
-        animateTableFromTop(true)
+        print("Loading",dayType)
+        switch(dayType) {
+            case "yesterday":
+                animateTableFromTop(true)
+                break
+            case "today":
+                animateTableBlinkIn(true) // placeholder
+                break
+            case "tomorrow":
+                animateTableFromRight(true)
+                break
+            default:
+                animateTableFromTop(true)
+                break
+        }
     }
     
     func animateTableUnloading() {
-        animateTableFromTop(false)
+        print("Unloading",dayType)
+        switch(dayType) {
+        case "yesterday":
+            animateTableFromTop(false)
+            break
+        case "today":
+            animateTableBlinkIn(false) // placeholder
+            break
+        case "tomorrow":
+            animateTableFromRight(false)
+            break
+        default:
+            animateTableFromTop(false)
+            break
+        }
     }
     
-    func animateTableFromRight() {
-        
-    }
-    
-    func animateTableFromTop(loading:Bool) {
-        tableView.reloadData()
+    func animateTableFromRight(loading:Bool) {
+//        tableView.reloadData()
         
         let cells = tableView.visibleCells
-        let tableHeight: CGFloat = tableView.bounds.size.height
+        let tableWidth: CGFloat = tableView.bounds.size.width
         
         for i in cells {
             let cell: UITableViewCell = i as UITableViewCell
-            cell.transform = CGAffineTransformMakeTranslation(0, -tableHeight)
+            cell.transform = CGAffineTransformMakeTranslation(loading==true ? tableWidth*2 : 0,  0 )
         }
         
         var index = 0
         
         for a in cells {
             let cell: UITableViewCell = a as UITableViewCell
-            UIView.animateWithDuration(1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: [], animations: {
-                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+            UIView.animateWithDuration(1.0, delay: 0.1 * Double(index), usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(loading==true ? 0 : tableWidth*2, 0);
                 }, completion: nil) // .Repeat, .CurveEaseOut, .Autoreverse
             
             index += 1
         }
     }
     
-    func animateTableBlinkIn() {
+    func animateTableFromTop(loading:Bool) {
+//        tableView.reloadData()
         
+        let cells = tableView.visibleCells
+        let tableHeight: CGFloat = tableView.bounds.size.height
+        
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.transform = CGAffineTransformMakeTranslation(0, loading==true ? -tableHeight : 0 )
+        }
+        
+        var index = 0
+        
+        for a in cells {
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animateWithDuration(0.5, delay: 0.1 * Double(index), usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0, loading==true ? 0 : -tableHeight);
+                }, completion: nil) // .Repeat, .CurveEaseOut, .Autoreverse
+            
+            index += 1
+            
+        }
+    }
+    
+    func animateTableBlinkIn(loading:Bool) {
+        //        tableView.reloadData()
+        
+        let cells = tableView.visibleCells
+        
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.transform = CGAffineTransformMakeScale(1.0, loading==true ? 0 : 1.0 )
+        }
+        
+        var index = 0
+        
+        for a in cells {
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animateWithDuration(0.5, delay: 0.1 * Double(index), usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransformMakeScale(1.0, loading==true ? 1.0 : 0);
+                }, completion: nil) // .Repeat, .CurveEaseOut, .Autoreverse
+            
+            index += 1
+            
+        }
+
     }
     
 //    func setupGestureRecognizer() {

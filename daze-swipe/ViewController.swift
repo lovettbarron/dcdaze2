@@ -16,23 +16,24 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     let bounds = UIScreen.mainScreen().bounds
     
-    var activeView: UIView!
+//    var activeView: dayView! = nil
+    var prevPage: Int! = nil
     
     // Instantiate all the views
     let ListOfViews = [
         "yesterday": 0,
         "today": 1,
-        "tomorrow": 2,
+        "tomorrow": 2
         ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print("LOADED SCROLL VIEW")
+        prevPage = 1
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
         self.loadViewIfNeeded()
         
         for (page, order) in ListOfViews {
@@ -49,7 +50,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             
             // Binding to parent
             presentViewController(view, animated: true, completion: nil)
-//            addChildViewController(view)
+            addChildViewController(view)
+            
             scrollView.insertSubview(view.view, atIndex: order)
             view.didMoveToParentViewController(self)
             print("Creating table ",page)
@@ -91,6 +93,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
+        prevPage = 1
         moveScrollPointToPage(1)
     }
 
@@ -148,15 +151,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return cell
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        
-    }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let a = childViewControllers[0] as? dayView
+        let b = childViewControllers[1] as? dayView
+        let c = childViewControllers[2] as? dayView
+        print(a!.dayType,b!.dayType,c!.dayType)
+        
         let width = UIScreen.mainScreen().bounds.width
-        let page = Int((scrollView.contentOffset.x+(width/2)) / (width)) // Forces "halfway" page change
-        print("Did Scroll on page",page)
-        activeView = scrollView.subviews[page >= 0 && page < ListOfViews.count ? page : 1 ]
+        var page = Int((scrollView.contentOffset.x+(width/2)) / (width)) // Forces "halfway" page change
+        
+        if(page == 1 ) { page = 2 }
+        else if(page == 2) { page = 1}
+        
+        if(prevPage != page) {
+            print("Did Scroll to page",page, "from",prevPage)
+//            activeView = childViewControllers[page >= 0 && page < ListOfViews.count ? page : 1 ] as? dayView
+//            let leaveView = childViewControllers[prevPage >= 0 && prevPage < ListOfViews.count ? prevPage : 0] as? dayView
+
+            let activeView = childViewControllers[page] as? dayView
+            let leaveView = childViewControllers[prevPage == nil ? 1 : prevPage] as? dayView
+            
+            activeView?.animateTableLoading()
+            leaveView?.animateTableUnloading()
+            prevPage = prevPage == nil ? 1 : page
+        }
+
+        
     }
     
 }
