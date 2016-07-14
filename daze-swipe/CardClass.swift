@@ -30,12 +30,18 @@ class Card {
     let desc: String!
     let location: String!
     let time: String!
+    let summary: String!
+    let link: NSURL!
+    let headlineImage:UIImage!
     
     init(dictionary:NSDictionary) {
         category = dictionary["category"]   as? Int
         name = dictionary["name"]           as? String
         location = dictionary["loc"]   as? String
         time = dictionary["time"]           as? String
+        summary = dictionary["summary"] as? String
+        link = NSURL(string:String(dictionary["link"]))
+        headlineImage = UIImage(named: "Music_pattern Copy.png") // placeholder
         
         // fixup the about text to add newlines
         let unescDesc = dictionary["desc"] as? String

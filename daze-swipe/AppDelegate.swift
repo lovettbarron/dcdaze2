@@ -18,14 +18,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let scrollView = storyboard.instantiateViewControllerWithIdentifier("ScrollView") 
-        window?.rootViewController = scrollView
-        window?.makeKeyAndVisible()
+        let scrollView = storyboard.instantiateViewControllerWithIdentifier("ScrollView")
+        let splashImage = UIImageView(image: UIImage(named:"frame.png"))
+        self.window?.rootViewController = scrollView
+        window?.addSubview(splashImage)
+        window?.bringSubviewToFront(splashImage)
+        splashImage.layer.anchorPoint = CGPointMake(0.5, 0.5)
+        
+        //reset the image view frame
+        splashImage.frame = CGRectMake(0, 0, 320, 480)
+        
+        
+        UIView.animateWithDuration(1.0,
+                                   delay:0.6,
+                                   options:[],
+                                   animations:{
+                                    splashImage.layer.transform = CATransform3DMakeScale(0.0, 1.0, 0.8)
+            },
+                                   completion:{ _ in
+                                    splashImage.removeFromSuperview()
+                                    self.window?.makeKeyAndVisible()
+        })
+        
         
         return true
     }
+    
+    func animateIntoApplication() {
+            }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

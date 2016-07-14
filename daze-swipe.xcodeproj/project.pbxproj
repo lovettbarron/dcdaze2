@@ -19,6 +19,8 @@
 		8359CFC71D27282100A314EA /* daze_swipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFC61D27282100A314EA /* daze_swipeTests.swift */; };
 		8359CFD21D27282100A314EA /* daze_swipeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFD11D27282100A314EA /* daze_swipeUITests.swift */; };
 		8359CFE21D272B3100A314EA /* dayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE11D272B3100A314EA /* dayView.swift */; };
+		837795731D382B7900665C42 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 837795721D382B7900665C42 /* close.png */; };
+		837795751D38325400665C42 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837795741D38325400665C42 /* WebView.swift */; };
 		83E932431D27372C0008047D /* cardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932421D27372C0008047D /* cardCellView.swift */; };
 		83E932451D27376E0008047D /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932441D27376E0008047D /* CardClass.swift */; };
 		83E932471D274EE10008047D /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E932461D274EE10008047D /* dummy.json */; };
@@ -36,6 +38,7 @@
 		83E9A66C1D2F5335002FAD25 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E9A66B1D2F5335002FAD25 /* map.png */; };
 		83EDC8FD1D373AE600F40368 /* OpenCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EDC8FC1D373AE600F40368 /* OpenCardController.swift */; };
 		83EDC9001D374DDA00F40368 /* CloseCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EDC8FF1D374DDA00F40368 /* CloseCardController.swift */; };
+		83EDC9041D38171F00F40368 /* Frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EDC9031D38171F00F40368 /* Frame.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,8 @@
 		8359CFD11D27282100A314EA /* daze_swipeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daze_swipeUITests.swift; sourceTree = "<group>"; };
 		8359CFD31D27282100A314EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8359CFE11D272B3100A314EA /* dayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayView.swift; sourceTree = "<group>"; };
+		837795721D382B7900665C42 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/close.png; sourceTree = "<group>"; };
+		837795741D38325400665C42 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		83E932421D27372C0008047D /* cardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardCellView.swift; sourceTree = "<group>"; };
 		83E932441D27376E0008047D /* CardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
 		83E932461D274EE10008047D /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dummy.json; path = support/dummy.json; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		83E9A66B1D2F5335002FAD25 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = ../../../../../Desktop/map.png; sourceTree = "<group>"; };
 		83EDC8FC1D373AE600F40368 /* OpenCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenCardController.swift; path = AnimationController/OpenCardController.swift; sourceTree = "<group>"; };
 		83EDC8FF1D374DDA00F40368 /* CloseCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloseCardController.swift; path = AnimationController/CloseCardController.swift; sourceTree = "<group>"; };
+		83EDC9031D38171F00F40368 /* Frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Frame.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/Frame.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 				8359CFE11D272B3100A314EA /* dayView.swift */,
 				83E932421D27372C0008047D /* cardCellView.swift */,
 				8304ACF81D36EC2000E149CA /* CardViewController.swift */,
+				837795741D38325400665C42 /* WebView.swift */,
 				83EDC9021D374F6200F40368 /* Model */,
 				83EDC8FE1D373AF100F40368 /* Animation */,
 				8359CFB21D27282100A314EA /* Main.storyboard */,
@@ -207,6 +214,8 @@
 		83E9A6541D2EB399002FAD25 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				837795721D382B7900665C42 /* close.png */,
+				83EDC9031D38171F00F40368 /* Frame.png */,
 				8304ACEA1D35641600E149CA /* fonts */,
 				83E9A66B1D2F5335002FAD25 /* map.png */,
 				8304ACF61D36A5DA00E149CA /* ScrollWheel.png */,
@@ -354,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837795731D382B7900665C42 /* close.png in Resources */,
 				83E9A6611D2EE4BC002FAD25 /* Food_pattern Copy.png in Resources */,
 				83E9A65A1D2EE21F002FAD25 /* Event_pattern.png in Resources */,
 				8359CFBC1D27282100A314EA /* LaunchScreen.storyboard in Resources */,
@@ -365,6 +375,7 @@
 				83E932471D274EE10008047D /* dummy.json in Resources */,
 				83E9A6641D2EEFFD002FAD25 /* launchImage.png in Resources */,
 				83E9A65B1D2EE21F002FAD25 /* Food_pattern.png in Resources */,
+				83EDC9041D38171F00F40368 /* Frame.png in Resources */,
 				83E9A66C1D2F5335002FAD25 /* map.png in Resources */,
 				83E9A6621D2EE4BC002FAD25 /* Music_pattern Copy.png in Resources */,
 				8304ACEC1D35643800E149CA /* KnockHTF52Cru in Resources */,
@@ -403,6 +414,7 @@
 				8304ACF91D36EC2000E149CA /* CardViewController.swift in Sources */,
 				83E932431D27372C0008047D /* cardCellView.swift in Sources */,
 				8359CFB71D27282100A314EA /* daze_swipe.xcdatamodeld in Sources */,
+				837795751D38325400665C42 /* WebView.swift in Sources */,
 				83E9A66A1D2EF285002FAD25 /* ScrollWheelView.swift in Sources */,
 				83EDC9001D374DDA00F40368 /* CloseCardController.swift in Sources */,
 			);
