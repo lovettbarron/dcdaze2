@@ -279,7 +279,6 @@
                                 </connections>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.57412308450000005" green="0.78363370899999996" blue="0.2807553411" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WEN-Ln-yof" firstAttribute="centerX" secondItem="8ok-sm-hPg" secondAttribute="centerX" id="BkP-wD-OLB"/>
                             <constraint firstItem="WEN-Ln-yof" firstAttribute="centerY" secondItem="8ok-sm-hPg" secondAttribute="centerY" id="Kxj-3k-2JK"/>
@@ -332,10 +331,10 @@
                                 </connections>
                             </scrollView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1O-wT-tjd" customClass="ScrollWheelView" customModule="daze_swipe" customModuleProvider="target">
-                                <rect key="frame" x="40" y="550" width="520" height="50"/>
+                                <rect key="frame" x="60" y="540" width="480" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a7b-mV-idf">
-                                        <rect key="frame" x="0.0" y="0.0" width="520" height="520"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                         </accessibility>
@@ -348,7 +347,7 @@
                                 <constraints>
                                     <constraint firstItem="a7b-mV-idf" firstAttribute="centerX" secondItem="s1O-wT-tjd" secondAttribute="centerX" id="7yB-M4-3E4"/>
                                     <constraint firstAttribute="trailing" secondItem="a7b-mV-idf" secondAttribute="trailing" id="9qJ-Az-sN5"/>
-                                    <constraint firstAttribute="height" constant="50" id="Mz2-Vf-LnM"/>
+                                    <constraint firstAttribute="height" constant="60" id="Mz2-Vf-LnM"/>
                                     <constraint firstItem="a7b-mV-idf" firstAttribute="top" secondItem="s1O-wT-tjd" secondAttribute="top" id="eoh-MO-T4p"/>
                                     <constraint firstItem="a7b-mV-idf" firstAttribute="leading" secondItem="s1O-wT-tjd" secondAttribute="leading" id="wFj-pT-oYc"/>
                                 </constraints>
@@ -363,9 +362,9 @@
                             <constraint firstAttribute="top" secondItem="bQW-xw-6Lu" secondAttribute="top" id="7VO-jW-gEJ"/>
                             <constraint firstAttribute="trailing" secondItem="bQW-xw-6Lu" secondAttribute="trailing" id="GCN-dA-ZdW"/>
                             <constraint firstAttribute="leading" secondItem="bQW-xw-6Lu" secondAttribute="leading" id="KZn-eo-EMh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="s1O-wT-tjd" secondAttribute="trailing" constant="20" id="ZcC-sh-Ba2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s1O-wT-tjd" secondAttribute="trailing" constant="40" id="ZcC-sh-Ba2"/>
                             <constraint firstAttribute="bottom" secondItem="bQW-xw-6Lu" secondAttribute="bottom" id="eLr-KN-TNz"/>
-                            <constraint firstItem="s1O-wT-tjd" firstAttribute="leading" secondItem="fkM-f1-mbm" secondAttribute="leadingMargin" constant="20" id="qnN-4z-eE3"/>
+                            <constraint firstItem="s1O-wT-tjd" firstAttribute="leading" secondItem="fkM-f1-mbm" secondAttribute="leadingMargin" constant="40" id="qnN-4z-eE3"/>
                             <constraint firstItem="mUg-IW-A32" firstAttribute="top" secondItem="s1O-wT-tjd" secondAttribute="bottom" id="tdc-tH-lsh"/>
                         </constraints>
                     </view>
