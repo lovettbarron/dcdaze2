@@ -146,8 +146,8 @@ class CardViewController: UIViewController {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dest = segue.destinationViewController as! ReferenceWebView
-        dest.passedURL = card.link
+        let dest = segue.destinationViewController as? ReferenceWebView
+        dest!.passedURL = card.link
 //        dest.transitioningDelegate = self
         //        swipeInteractionController.wireToViewController(destinationViewController)
     }

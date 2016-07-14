@@ -409,10 +409,10 @@ Location</string>
             </objects>
             <point key="canvasLocation" x="-342" y="-1533"/>
         </scene>
-        <!--Web View-->
+        <!--Reference Web View-->
         <scene sceneID="Dks-mz-fEA">
             <objects>
-                <viewController id="Ucm-Sp-qbY" customClass="WebView" customModule="daze_swipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ucm-Sp-qbY" customClass="ReferenceWebView" customModule="daze_swipe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pld-pm-AHC"/>
                         <viewControllerLayoutGuide type="bottom" id="D3x-Wm-qSu"/>

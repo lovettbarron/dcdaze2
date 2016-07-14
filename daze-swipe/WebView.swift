@@ -13,7 +13,7 @@ class ReferenceWebView: UIViewController {
     
     @IBOutlet var webview:UIWebView!
     
-    var passedURL:NSURL!
+    var passedURL:NSURL! = NSURL(string:"http://andrewlb.com")
     
     override func viewDidLoad() {
         super.viewDidLoad()
