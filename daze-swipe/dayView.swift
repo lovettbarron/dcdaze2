@@ -75,6 +75,13 @@ class dayView: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You Tapped ", indexPath)
         selectedCard = cards[indexPath.row]
+        
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! cardCellView
+        
+        self.performSegueWithIdentifier("openCard", sender: currentCell)
+        
+        
+        
 //        performSegueWithIdentifier("openCard", sender: self)
     }
     
@@ -87,22 +94,31 @@ class dayView: UITableViewController {
         return .None
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let path = self.tableView.indexPathForSelectedRow!
-//        
-//        let cell = segue as! cardCellView
-////        let cell = sender?.indexPathForSelectedRow as! cardCellView
-//        if (segue.identifier == "openCard") {
-//            print("TRANSITION TIME!",selectedCard.name)
-//            let controller = segue.destinationViewController as! CardViewController
-//            controller.card = selectedCard
-//        }
-        
-        
-        
-//        let destinationVC = segue.destinationViewController as! CardViewController
-//        destinationVC.card = selectedCard!
+        print("Triggering prepareForSegue in dayView",dayType)
+        print("Sender",sender)
+        let dest = segue.destinationViewController as! CardViewController
+        dest.sentObj = sender
     }
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+////        let path = self.tableView.indexPathForSelectedRow!
+////        
+////        let cell = segue as! cardCellView
+//////        let cell = sender?.indexPathForSelectedRow as! cardCellView
+////        if (segue.identifier == "openCard") {
+////            print("TRANSITION TIME!",selectedCard.name)
+////            let controller = segue.destinationViewController as! CardViewController
+////            controller.card = selectedCard
+////        }
+//        
+//        
+//        
+////        let destinationVC = segue.destinationViewController as! CardViewController
+////        destinationVC.card = selectedCard!
+//    }
 
     
     

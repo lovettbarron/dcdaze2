@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let scrollView = storyboard.instantiateViewControllerWithIdentifier("ScrollView") as! UIViewController
+        let scrollView = storyboard.instantiateViewControllerWithIdentifier("ScrollView") 
         window?.rootViewController = scrollView
         window?.makeKeyAndVisible()
         

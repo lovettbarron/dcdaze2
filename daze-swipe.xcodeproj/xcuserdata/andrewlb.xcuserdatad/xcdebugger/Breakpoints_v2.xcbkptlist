@@ -116,7 +116,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daze-swipe/CardViewController.swift"
@@ -129,14 +129,29 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "daze_swipe.CardViewController.__deallocating_deinit"
+                  moduleName = "daze-swipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/CardViewController.swift"
+                  timestampString = "490157048.282372"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "daze_swipe.CardViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; daze_swipe.CardViewController"
                   moduleName = "daze-swipe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/CardViewController.swift"
-                  timestampString = "490149800.919097"
+                  timestampString = "490157048.28249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -144,14 +159,14 @@
                   offsetFromSymbolStart = "69">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "daze_swipe.CardViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;daze_swipe.CardViewController&gt;"
                   moduleName = "daze-swipe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/andrewlb/src/swift/daze/daze-swipe/daze-swipe/CardViewController.swift"
-                  timestampString = "490149800.919253"
+                  timestampString = "490157048.282582"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -168,12 +183,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "daze-swipe/CardViewController.swift"
-            timestampString = "490149756.381863"
+            timestampString = "490157408.901631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "dismissButtonTapped(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "daze-swipe/dayView.swift"
+            timestampString = "490157408.901631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
