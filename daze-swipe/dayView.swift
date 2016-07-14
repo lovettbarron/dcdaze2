@@ -17,11 +17,17 @@ class dayView: UITableViewController {
     var order:Int!
     
     var selectedCard:Card! = nil
+    var selectedCell:cardCellView!
 
     
+    private let OpenCardAnimation = OpenCardAnimationController()
+    private let CloseCardAnimation = CloseCardAnimationController()
+    
+    
+    
+    // MARK: Init Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -67,6 +73,8 @@ class dayView: UITableViewController {
         return 1
     }
     
+    
+    // MARK: Table Overrides
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
     }
@@ -77,7 +85,7 @@ class dayView: UITableViewController {
         selectedCard = cards[indexPath.row]
         
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! cardCellView
-        
+        selectedCell = currentCell
         self.performSegueWithIdentifier("openCard", sender: currentCell)
         
         
@@ -99,29 +107,15 @@ class dayView: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("Triggering prepareForSegue in dayView",dayType)
         print("Sender",sender)
+        selectedCell = sender as? cardCellView
         let dest = segue.destinationViewController as! CardViewController
         dest.sentObj = sender
+        dest.transitioningDelegate = self
+//        swipeInteractionController.wireToViewController(destinationViewController)
     }
-//    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-////        let path = self.tableView.indexPathForSelectedRow!
-////        
-////        let cell = segue as! cardCellView
-//////        let cell = sender?.indexPathForSelectedRow as! cardCellView
-////        if (segue.identifier == "openCard") {
-////            print("TRANSITION TIME!",selectedCard.name)
-////            let controller = segue.destinationViewController as! CardViewController
-////            controller.card = selectedCard
-////        }
-//        
-//        
-//        
-////        let destinationVC = segue.destinationViewController as! CardViewController
-////        destinationVC.card = selectedCard!
-//    }
 
-    
-    
+
+    // MARK: Animations
     //////////////////////////
     ////// ALL ANIMATION /////
     //////////////////////////
@@ -233,16 +227,28 @@ class dayView: UITableViewController {
 
     }
     
+}
+
+
+
+// MARK: Extension: Segue
+extension dayView: UIViewControllerTransitioningDelegate {
     
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        print("Calling Animation frame")
+        
+        
+        OpenCardAnimation.originFrame = tableView.frame
+        return OpenCardAnimation
+    }
     
-//    func setupGestureRecognizer() {
-//        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(dayView.handleDoubleTap(_:)))
-//        doubleTap.numberOfTapsRequired = 2
-//        self.view.addGestureRecognizer(doubleTap)
-//    }
-//    
-//    func handleDoubleTap(recognizer: UITapGestureRecognizer) {
-//      
-//    }
+        func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            CloseCardAnimation.destinationFrame = tableView.frame
+            return CloseCardAnimation
+        }
     
+    //    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    //        return swipeInteractionController.interactionInProgress ? swipeInteractionController : nil
+    //    }
 }

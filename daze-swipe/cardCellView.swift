@@ -22,6 +22,7 @@ class cardCellView: UITableViewCell {
     
     var viewCard:Card!
     
+    
     func useCard(card:Card) {
         viewCard = card
         // Fix the #()@#$ constraint
@@ -97,3 +98,4 @@ class cardCellView: UITableViewCell {
 
     
 }
+

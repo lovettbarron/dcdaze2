@@ -283,6 +283,9 @@
                             <constraint firstItem="WEN-Ln-yof" firstAttribute="centerX" secondItem="8ok-sm-hPg" secondAttribute="centerX" id="BkP-wD-OLB"/>
                             <constraint firstItem="WEN-Ln-yof" firstAttribute="centerY" secondItem="8ok-sm-hPg" secondAttribute="centerY" id="Kxj-3k-2JK"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yUf-fZ-a69" appends="YES" id="FJg-9o-ZRm"/>
+                        </connections>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -304,6 +307,11 @@
                         <action selector="dismissButtonTapped:" destination="Rhj-Cq-Tnf" id="B3p-WW-dro"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="yUf-fZ-a69">
+                    <connections>
+                        <action selector="dismissButtonSwipe:" destination="Rhj-Cq-Tnf" id="xWv-sS-KIt"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <pinchGestureRecognizer id="CvS-0W-Qsl">
                     <connections>
                         <action selector="dismissButtonClosed:" destination="Rhj-Cq-Tnf" id="74W-kC-0Nz"/>

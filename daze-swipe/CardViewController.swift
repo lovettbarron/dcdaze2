@@ -94,4 +94,9 @@ class CardViewController: UIViewController {
         print("Squished view")
     }
     
+    @IBAction func dismissButtonSwipe(sender: UISwipeGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        print("swipe view")
+    }
+    
 }
