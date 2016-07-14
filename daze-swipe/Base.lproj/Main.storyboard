@@ -19,7 +19,7 @@
         <scene sceneID="sbd-Pf-Lwt">
             <objects>
                 <tableViewController storyboardIdentifier="dayView" id="ukb-Gu-4aC" customClass="dayView" customModule="daze_swipe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="wMv-Nt-chq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="wMv-Nt-chq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.84705882349999995" green="0.42352941179999998" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,7 +139,7 @@
                                     <outlet property="mapView" destination="a8m-Vb-TTt" id="BSQ-WN-BuO"/>
                                     <outlet property="nameLabel" destination="l52-zA-nTW" id="iXW-Mc-uC3"/>
                                     <outlet property="textBgView" destination="mDg-y6-tGk" id="nt6-mf-bbr"/>
-                                    <segue destination="Rhj-Cq-Tnf" kind="presentation" identifier="openCard" id="fPV-FJ-ue0"/>
+                                    <segue destination="Rhj-Cq-Tnf" kind="presentation" identifier="openCard" modalPresentationStyle="overCurrentContext" id="8Gc-dg-2YK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -241,6 +241,7 @@
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="kym-GE-cJN" firstAttribute="top" secondItem="WEN-Ln-yof" secondAttribute="top" id="3yE-NS-EQo"/>
                                     <constraint firstItem="5Ce-DM-NdD" firstAttribute="centerX" secondItem="WEN-Ln-yof" secondAttribute="centerX" id="470-Tk-JRr"/>
@@ -265,9 +266,20 @@
                                         <exclude reference="uEW-PA-buE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CvS-0W-Qsl" appends="YES" id="tru-u0-dtI"/>
+                                </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtC-DD-gct">
+                                <rect key="frame" x="87" y="608" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.3498191833" green="0.42625305060000002" blue="0.81047129630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Rdz-GN-Pz6" appends="YES" id="rQ1-4w-TM1"/>
+                                </connections>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.57412308450000005" green="0.78363370899999996" blue="0.2807553411" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WEN-Ln-yof" firstAttribute="centerX" secondItem="8ok-sm-hPg" secondAttribute="centerX" id="BkP-wD-OLB"/>
                             <constraint firstItem="WEN-Ln-yof" firstAttribute="centerY" secondItem="8ok-sm-hPg" secondAttribute="centerY" id="Kxj-3k-2JK"/>
@@ -280,6 +292,7 @@
                     <connections>
                         <outlet property="cardBorderColor" destination="8ok-sm-hPg" id="eaZ-pq-9e9"/>
                         <outlet property="categoryImage" destination="kym-GE-cJN" id="1VS-ly-8BU"/>
+                        <outlet property="closeButton" destination="RtC-DD-gct" id="Gqe-dL-F3w"/>
                         <outlet property="descLabel" destination="rd5-5b-Ehl" id="gRt-dG-nFC"/>
                         <outlet property="mainView" destination="WEN-Ln-yof" id="sdW-YB-cwT"/>
                         <outlet property="mapView" destination="tBt-oJ-2cu" id="izY-DO-53R"/>
@@ -287,6 +300,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxI-5k-3pQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Rdz-GN-Pz6">
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="Rhj-Cq-Tnf" id="B3p-WW-dro"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="CvS-0W-Qsl">
+                    <connections>
+                        <action selector="dismissButtonClosed:" destination="Rhj-Cq-Tnf" id="74W-kC-0Nz"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-342" y="-1533"/>
         </scene>

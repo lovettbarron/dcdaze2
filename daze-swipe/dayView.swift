@@ -15,6 +15,7 @@ class dayView: UITableViewController {
     var cards: [Card] = [Card]()
     var dayType: String!
     var order:Int!
+    
     var selectedCard:Card! = nil
 
     
@@ -74,7 +75,7 @@ class dayView: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("You Tapped ", indexPath)
         selectedCard = cards[indexPath.row]
-        performSegueWithIdentifier("openCard", sender: self)
+//        performSegueWithIdentifier("openCard", sender: self)
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -87,12 +88,20 @@ class dayView: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let cell = sender as! cardCellView
-        if (segue.identifier == "openCard") {
-            let controller = segue.destinationViewController as! CardViewController
-            controller.card = cell.viewCard
-        }
+//        let path = self.tableView.indexPathForSelectedRow!
+//        
+//        let cell = segue as! cardCellView
+////        let cell = sender?.indexPathForSelectedRow as! cardCellView
+//        if (segue.identifier == "openCard") {
+//            print("TRANSITION TIME!",selectedCard.name)
+//            let controller = segue.destinationViewController as! CardViewController
+//            controller.card = selectedCard
+//        }
         
+        
+        
+//        let destinationVC = segue.destinationViewController as! CardViewController
+//        destinationVC.card = selectedCard!
     }
 
     

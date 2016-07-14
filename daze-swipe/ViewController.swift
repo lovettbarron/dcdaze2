@@ -189,6 +189,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             activeView?.animateTableLoading()
             leaveView?.animateTableUnloading()
             prevPage = prevPage == nil ? 1 : page
+            
         }
 
         
