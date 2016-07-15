@@ -118,7 +118,7 @@ class Card {
                 let topResult:CLPlacemark = placemarks![0];
                 let placemark: MKPlacemark = MKPlacemark(placemark: topResult);
                 self.lat = placemark.coordinate.latitude
-                self.lon = placemark.coordinate.latitude
+                self.lon = placemark.coordinate.longitude
                 self.downloadImage()
                 print("GotLatLon",placemark.coordinate)
             }
