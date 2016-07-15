@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class CardViewController: UIViewController {
+class CardViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var cardBorderColor: UIView!
     @IBOutlet var dayController:ViewController!
@@ -31,12 +31,22 @@ class CardViewController: UIViewController {
     var card:Card!
     var sentObj:AnyObject!
     
+    // Location objects... This class is getting way too big
+    var coordinates:CLLocationCoordinate2D!
+    var locationManager: CLLocationManager!
+    var myLocMarker:MKCircle!
+    
+    
+    // MARK: Load functions
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.initLocationManager()
+        
         closeButton.userInteractionEnabled = true
+        
+        // Populate interface objects
         let cell = sentObj as? cardCellView
         card = cell?.viewCard
-        //        cardBorderColor.backgroundColor = dayController.generateViewColour()
         textBgView.layer.backgroundColor = card.getCategoryColor().CGColor
         textBgView.layer.zPosition = 1
         
@@ -46,16 +56,21 @@ class CardViewController: UIViewController {
         
         dateTimeLabel.text = card.time! + "\n" + card.location!
         descLabel.text = card.desc
-        
         dazeDescLabel.text = card.summary!
         
-        
+        // Imaging
         categoryImage.layer.backgroundColor = card.getCategoryPattern().CGColor
         categoryImage.layer.zPosition = 2
+        highlightImage.image = card.headlineImage.roundImage()
         
-        highlightImage.image = UIImage(named:"map.png")!.roundImage()
-
+        // Mapping
+        mapView.delegate = self
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
         
+        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2DMake(38.9072, -77.0369), span: MKCoordinateSpanMake(0.02, 0.02)), animated: false)
+        findAddressOnMap(card.location)
         drawCardDetails()
 
     }
@@ -65,29 +80,27 @@ class CardViewController: UIViewController {
            //        centerMapOnLocation()
     }
     
+    // MARK Draw Functions
     func drawCardDetails() {
-//        var contentView = cardView.frame
-//        contentView.size.width = UIScreen.mainScreen().bounds.width
-//        mainView.frame = contentView
-//        
-//        // Card Shadoww
+        // Card Shadoww
         mainView.layer.shadowColor = UIColor.blackColor().CGColor
         mainView.layer.shadowOpacity = 0.7
         mainView.layer.shadowOffset = CGSize(width: 0, height: 4)
         mainView.layer.shadowRadius = 5
-//
-//        // Card Rounding
+
+        // Card Rounding
         mainView.layer.cornerRadius = 10
         mainView.layer.masksToBounds = true
         mainView.layer.borderColor = UIColor(white:0.6, alpha:1).CGColor
         mainView.layer.borderWidth = 1
-//
-//        // UIImage
+
+        // UIImage
         categoryImage.layer.shadowColor = UIColor.blackColor().CGColor
         categoryImage.layer.shadowOpacity = 0.7
         categoryImage.layer.shadowOffset = CGSize(width: 0, height: 4)
         categoryImage.layer.shadowRadius = 4
         
+        // Reserve item
         reserveBtn.layer.shadowColor = UIColor.blackColor().CGColor
         reserveBtn.layer.shadowOpacity = 0.7
         reserveBtn.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -98,6 +111,7 @@ class CardViewController: UIViewController {
         reserveBtn.layer.borderWidth = 0
         reserveBtn.layer.backgroundColor = card.getCategoryPattern().CGColor
         
+        // Send to a friend
         sendBtn.layer.shadowColor = UIColor.blackColor().CGColor
         sendBtn.layer.shadowOpacity = 0.7
         sendBtn.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -109,6 +123,7 @@ class CardViewController: UIViewController {
         sendBtn.layer.backgroundColor = card.getCategoryPattern().CGColor
         sendBtn.layer.opacity = 0.6
         
+        // Rounding out Map
         mapView.layer.cornerRadius = 10
         
     }
@@ -123,7 +138,71 @@ class CardViewController: UIViewController {
         
     }
     
+   
+    // MARK: Location
     
+    
+    func findAddressOnMap(address:String) {
+        let location = address
+        let geocoder:CLGeocoder = CLGeocoder();
+        geocoder.geocodeAddressString(location) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+            if placemarks?.count > 0 {
+                let topResult:CLPlacemark = placemarks![0];
+                let placemark: MKPlacemark = MKPlacemark(placemark: topResult);
+                self.coordinates = placemark.coordinate
+                self.mapView.addAnnotation(placemark)
+                self.mapView.setCenterCoordinate(placemark.coordinate, animated: true)
+                //                self.routeToAddress()
+            }
+        }
+    }
+    
+    func routeToAddress() {
+        var myAddress = self.mapView.userLocation.location!.coordinate
+        
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: myAddress, addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: coordinates, addressDictionary: nil))
+        request.requestsAlternateRoutes = true
+        request.transportType = .Automobile
+        let directions = MKDirections(request: request)
+        
+        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            
+            for route in unwrappedResponse.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        renderer.strokeColor = UIColor.blueColor()
+        return renderer
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.mapView.removeOverlay(myLocMarker)
+        
+        let current = locations.last?.coordinate
+        print("Updating location",current)
+        myLocMarker = MKCircle(centerCoordinate: current!, radius: 10)
+        self.mapView.addOverlay(myLocMarker)
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways {
+            if CLLocationManager.isMonitoringAvailableForClass(CLBeaconRegion.self) {
+                if CLLocationManager.isRangingAvailable() {
+                    routeToAddress()
+                }
+            }
+        }
+    }
+    
+    // MARK: Actions and Interactions
     
     @IBAction func dismissButtonTapped(sender: UITapGestureRecognizer) {
         self.dismissViewControllerAnimated(true, completion: nil)

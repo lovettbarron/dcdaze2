@@ -21,6 +21,8 @@
 		8359CFE21D272B3100A314EA /* dayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8359CFE11D272B3100A314EA /* dayView.swift */; };
 		837795731D382B7900665C42 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 837795721D382B7900665C42 /* close.png */; };
 		837795751D38325400665C42 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837795741D38325400665C42 /* WebView.swift */; };
+		837795771D38723900665C42 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 837795761D38723900665C42 /* default.gpx */; };
+		837795791D3874B600665C42 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837795781D3874B600665C42 /* MapKit.framework */; };
 		83E932431D27372C0008047D /* cardCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932421D27372C0008047D /* cardCellView.swift */; };
 		83E932451D27376E0008047D /* CardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E932441D27376E0008047D /* CardClass.swift */; };
 		83E932471D274EE10008047D /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 83E932461D274EE10008047D /* dummy.json */; };
@@ -88,6 +90,8 @@
 		8359CFE11D272B3100A314EA /* dayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayView.swift; sourceTree = "<group>"; };
 		837795721D382B7900665C42 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../../../Dropbox/_dailyDesign/160628_DCDaze/close.png; sourceTree = "<group>"; };
 		837795741D38325400665C42 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		837795761D38723900665C42 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = default.gpx; path = "daze-swipe/support/default.gpx"; sourceTree = "<group>"; };
+		837795781D3874B600665C42 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		83E932421D27372C0008047D /* cardCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cardCellView.swift; sourceTree = "<group>"; };
 		83E932441D27376E0008047D /* CardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardClass.swift; sourceTree = "<group>"; };
 		83E932461D274EE10008047D /* dummy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dummy.json; path = support/dummy.json; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837795791D3874B600665C42 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +158,8 @@
 		8359CFA21D27282100A314EA = {
 			isa = PBXGroup;
 			children = (
+				837795781D3874B600665C42 /* MapKit.framework */,
+				837795761D38723900665C42 /* default.gpx */,
 				8359CFAD1D27282100A314EA /* daze-swipe */,
 				8359CFC51D27282100A314EA /* daze-swipeTests */,
 				8359CFD01D27282100A314EA /* daze-swipeUITests */,
@@ -327,6 +334,11 @@
 					8359CFAA1D27282100A314EA = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = X9ZE6E9DJ2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8359CFC11D27282100A314EA = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -373,6 +385,7 @@
 				8304ACF71D36A5DA00E149CA /* ScrollWheel.png in Resources */,
 				83E9A65C1D2EE21F002FAD25 /* Music_pattern.png in Resources */,
 				83E932471D274EE10008047D /* dummy.json in Resources */,
+				837795771D38723900665C42 /* default.gpx in Resources */,
 				83E9A6641D2EEFFD002FAD25 /* launchImage.png in Resources */,
 				83E9A65B1D2EE21F002FAD25 /* Food_pattern.png in Resources */,
 				83EDC9041D38171F00F40368 /* Frame.png in Resources */,

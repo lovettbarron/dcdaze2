@@ -11,14 +11,15 @@ import UIKit
 
 class ReferenceWebView: UIViewController {
     
-    @IBOutlet var webview:UIWebView!
+    @IBOutlet weak var webview:UIWebView!
     
     var passedURL:NSURL! = NSURL(string:"http://andrewlb.com")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let requestObj = NSURLRequest(URL: passedURL!);
-        webview.loadRequest(requestObj);
+        print("Loading webview",passedURL)
+        let requestObj = NSURLRequest(URL: passedURL!)
+        webview.loadRequest(requestObj)
     }
     
     @IBAction func dismissButtonTapped(sender: UITapGestureRecognizer) {
