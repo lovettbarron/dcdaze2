@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        initLocationManager();
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let scrollView = storyboard.instantiateViewControllerWithIdentifier("ScrollView")
         let splashImage = UIImageView(image: UIImage(named:"frame.png"))
@@ -147,16 +148,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationFixAchieved = false
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        //        locationManager.locationServicesEnabled
+        CLLocationManager.locationServicesEnabled()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         locationManager.requestAlwaysAuthorization()
     }
     
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         locationManager.stopUpdatingLocation()
-        if (error) {
+        if ((error) != nil) {
             if (seenError == false) {
                 seenError = true
                 print(error)
@@ -164,7 +165,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations, locations: [AnyObject]) {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (locationFixAchieved == false) {
             locationFixAchieved = true
             var locationArray = locations as NSArray

@@ -25,6 +25,8 @@ class cardCellView: UITableViewCell {
     
     func useCard(card:Card) {
         viewCard = card
+        
+//        viewCard.downloadImage()
         // Fix the #()@#$ constraint
         
 //        let widthConstraint = NSLayoutConstraint(
@@ -50,7 +52,7 @@ class cardCellView: UITableViewCell {
         categoryImage.layer.backgroundColor = card.getCategoryPattern().CGColor
         categoryImage.layer.zPosition = 2
         drawCardDetails()
-        mapView = UIImageView(image: UIImage(named:"map.png"))
+        mapView.image = card.mapThumbnail!
 //        centerMapOnLocation()
     }
     
@@ -95,7 +97,6 @@ class cardCellView: UITableViewCell {
         }
     }
     
-
     
 }
 

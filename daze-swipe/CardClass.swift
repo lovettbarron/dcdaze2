@@ -16,6 +16,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 enum Category: Int {
     case Music = 0
@@ -33,6 +34,10 @@ class Card {
     let summary: String!
     let link: NSURL!
     let headlineImage:UIImage!
+    var mapThumbnail:UIImage!
+    
+    var lat:Double! = 0
+    var lon:Double! = 0
     
     init(dictionary:NSDictionary) {
         category = dictionary["category"]   as? Int
@@ -42,25 +47,11 @@ class Card {
         summary = dictionary["summary"] as? String
         link = NSURL(string:String(dictionary["link"]))
         headlineImage = UIImage(named: "Music_pattern Copy.png") // placeholder
-        
         // fixup the about text to add newlines
         let unescDesc = dictionary["desc"] as? String
         desc = unescDesc?.stringByReplacingOccurrencesOfString("\\n", withString:"\n", options:[], range:nil)
+        getLatLon(location)
     }
-    
-//    func getCategoryImage() -> UIImage {
-//        switch(category) {
-//        case 0 :
-//            return getImageWithColor(UIColor.blueColor(), size: CGSize(width: 100,height: 100))
-//        case 1:
-//            return getImageWithColor(UIColor.cyanColor(), size: CGSize(width: 100,height: 100))
-//        case 2:
-//            return getImageWithColor(UIColor.purpleColor(), size: CGSize(width: 100,height: 100))
-//        default:
-//            return getImageWithColor(UIColor.darkGrayColor(), size: CGSize(width: 100,height: 100))
-//            
-//        }
-//    }
     
     func getCategoryColor() -> UIColor {
         switch(category) {
@@ -114,6 +105,52 @@ class Card {
             }
         }
         return cards
+    }
+    
+    func getLatLon(address:String) {
+        let location = address
+        let geocoder:CLGeocoder = CLGeocoder();
+        geocoder.geocodeAddressString(location) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+            if placemarks?.count > 0 {
+                let topResult:CLPlacemark = placemarks![0];
+                let placemark: MKPlacemark = MKPlacemark(placemark: topResult);
+                self.lat = placemark.coordinate.latitude
+                self.lon = placemark.coordinate.latitude
+                self.downloadImage()
+                print("GotLatLon",placemark.coordinate)
+            }
+        }
+    }
+
+    func getURL() -> NSURL {
+        let url = String("https://maps.googleapis.com/maps/api/staticmap?center="+String(self.lat)+","+String(self.lon)+"&zoom=14&size=640x400&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=AIzaSyDQzBhLQfyJ5aL6Uu-tAueEaXPpXz5OCSc")
+        let path = NSURL(string: url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
+        return path!
+    }
+    
+    func downloadImage() {
+        var image: UIImage!
+        let url = self.getURL()
+        
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        let mainQueue = NSOperationQueue.mainQueue()
+        NSURLConnection.sendAsynchronousRequest(request, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+            if error == nil {
+                // Convert the downloaded data in to a UIImage object
+                let image = UIImage(data: data!)
+                // Store the image in to our cache
+                self.mapThumbnail = image
+                // Update the cell
+                dispatch_async(dispatch_get_main_queue(), {
+//
+                })
+            }
+            else {
+                print("Error: \(error!.localizedDescription)")
+            }
+        })
+//        let img = image as? UIImage
+//        return img!
     }
     
 }

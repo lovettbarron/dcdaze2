@@ -44,6 +44,10 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We&apos;ll tell you where you&apos;re going!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;ll tell you where you&apos;re going!</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

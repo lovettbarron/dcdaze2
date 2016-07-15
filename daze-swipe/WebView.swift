@@ -18,11 +18,12 @@ class ReferenceWebView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loading webview",passedURL)
+//        webview = UIWebView(frame: self.view.bounds)
         let requestObj = NSURLRequest(URL: passedURL!)
         webview.loadRequest(requestObj)
     }
     
-    @IBAction func dismissButtonTapped(sender: UITapGestureRecognizer) {
+    @IBAction func dismissButtonTapped(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
