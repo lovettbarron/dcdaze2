@@ -50,6 +50,9 @@ class Card {
         // fixup the about text to add newlines
         let unescDesc = dictionary["desc"] as? String
         desc = unescDesc?.stringByReplacingOccurrencesOfString("\\n", withString:"\n", options:[], range:nil)
+        
+        mapThumbnail = UIImage(named: "Music_pattern Copy.png") // Placeholder
+        
         getLatLon(location)
     }
     
@@ -123,7 +126,9 @@ class Card {
     }
 
     func getURL() -> NSURL {
-        let url = String("https://maps.googleapis.com/maps/api/staticmap?center="+String(self.lat)+","+String(self.lon)+"&zoom=14&size=640x400&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=AIzaSyDQzBhLQfyJ5aL6Uu-tAueEaXPpXz5OCSc")
+        let centerLon = self.lon+0.004
+        
+        let url = String("https://maps.googleapis.com/maps/api/staticmap?center="+String(self.lat)+","+String(centerLon)+"&zoom=14&size=400x200&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&markers=color:white%7Clabel:C"+String(self.lat)+","+String(self.lon)+"&key=AIzaSyDQzBhLQfyJ5aL6Uu-tAueEaXPpXz5OCSc")
         let path = NSURL(string: url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         return path!
     }
@@ -142,7 +147,8 @@ class Card {
                 self.mapThumbnail = image
                 // Update the cell
                 dispatch_async(dispatch_get_main_queue(), {
-//
+                     NSNotificationCenter.defaultCenter().postNotificationName("didUpdateImage", object: nil)
+                    
                 })
             }
             else {

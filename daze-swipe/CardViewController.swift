@@ -231,6 +231,8 @@ class CardViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         //        swipeInteractionController.wireToViewController(destinationViewController)
     }
     
+
+    
 }
 
 

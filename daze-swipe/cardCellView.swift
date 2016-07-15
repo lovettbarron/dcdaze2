@@ -25,22 +25,6 @@ class cardCellView: UITableViewCell {
     
     func useCard(card:Card) {
         viewCard = card
-        
-//        viewCard.downloadImage()
-        // Fix the #()@#$ constraint
-        
-//        let widthConstraint = NSLayoutConstraint(
-//            item: self,
-//            attribute: NSLayoutAttribute.Width,
-//            relatedBy: NSLayoutRelation.Equal,
-//            toItem: nil,
-//            attribute: NSLayoutAttribute.NotAnAttribute,
-//            multiplier: 1,
-//            constant: UIScreen.mainScreen().bounds.width-20)
-//        
-//        NSLayoutConstraint.activateConstraints([widthConstraint])
-//        self.translatesAutoresizingMaskIntoConstraints = false
-
         // Fill in the data
         nameLabel.text = card.name
         nameLabel.font = UIFont(name: "KnockHTF52Cru", size: 34)
@@ -53,6 +37,9 @@ class cardCellView: UITableViewCell {
         categoryImage.layer.zPosition = 2
         drawCardDetails()
         mapView.image = card.mapThumbnail!
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.imageDownloaded(_:)), name:"didUpdateImage", object: nil)
+
 //        centerMapOnLocation()
     }
     
@@ -88,6 +75,14 @@ class cardCellView: UITableViewCell {
 //                                                                  regionRadius * 2.0, regionRadius * 2.0)
 //        mapView.setRegion(coordinateRegion, animated: true)
 //    }
+    
+    func imageDownloaded(notification:NSNotification) {
+        print("Got Image update notification")
+        self.mapView.reloadInputViews()
+        self.mapView.image = self.viewCard.mapThumbnail!
+        self.mapView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.mapView.clipsToBounds = true
+    }
     
     class func animate(cell:UITableViewCell) {
         let view = cell.contentView
