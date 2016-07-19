@@ -49,6 +49,8 @@ class CardViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         card = cell?.viewCard
         textBgView.layer.backgroundColor = card.getCategoryColor().CGColor
         textBgView.layer.zPosition = 1
+        textBgView.layer.cornerRadius = 10
+        textBgView.layer.masksToBounds = true
         
         nameLabel.text = card.name!
         nameLabel.font = UIFont(name: "KnockHTF52Cru", size: 34)
@@ -158,23 +160,23 @@ class CardViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     func routeToAddress() {
-        var myAddress = self.mapView.userLocation.location!.coordinate
-        
-        let request = MKDirectionsRequest()
-        request.source = MKMapItem(placemark: MKPlacemark(coordinate: myAddress, addressDictionary: nil))
-        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: coordinates, addressDictionary: nil))
-        request.requestsAlternateRoutes = true
-        request.transportType = .Automobile
-        let directions = MKDirections(request: request)
-        
-        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
-            
-            for route in unwrappedResponse.routes {
-                self.mapView.addOverlay(route.polyline)
-                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-            }
-        }
+//        var myAddress = self.mapView.userLocation.location!.coordinate
+//        
+//        let request = MKDirectionsRequest()
+//        request.source = MKMapItem(placemark: MKPlacemark(coordinate: myAddress, addressDictionary: nil))
+//        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: coordinates, addressDictionary: nil))
+//        request.requestsAlternateRoutes = true
+//        request.transportType = .Automobile
+//        let directions = MKDirections(request: request)
+//        
+//        directions.calculateDirectionsWithCompletionHandler { [unowned self] response, error in
+//            guard let unwrappedResponse = response else { return }
+//            
+//            for route in unwrappedResponse.routes {
+//                self.mapView.addOverlay(route.polyline)
+//                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+//            }
+//        }
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {

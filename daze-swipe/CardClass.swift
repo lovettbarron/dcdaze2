@@ -33,7 +33,7 @@ class Card {
     let time: String!
     let summary: String!
     let link: NSURL!
-    let headlineImage:UIImage!
+    var headlineImage:UIImage!
     var mapThumbnail:UIImage!
     
     var lat:Double! = 0
@@ -46,13 +46,13 @@ class Card {
         time = dictionary["time"]           as? String
         summary = dictionary["summary"] as? String
         link = NSURL(string:String(dictionary["link"]))
-        headlineImage = UIImage(named: "Music_pattern Copy.png") // placeholder
+//        headlineImage = UIImage(named: "Music_pattern Copy.png") // placeholder
         // fixup the about text to add newlines
         let unescDesc = dictionary["desc"] as? String
         desc = unescDesc?.stringByReplacingOccurrencesOfString("\\n", withString:"\n", options:[], range:nil)
         
         mapThumbnail = UIImage(named: "Music_pattern Copy.png") // Placeholder
-        
+        headlineImage = getCategoryImage()
         getLatLon(location)
     }
     
@@ -69,16 +69,33 @@ class Card {
         }
     }
     
-    func getCategoryPattern() -> UIColor {
+    func getCategoryColorHex() -> String {
         switch(category) {
         case 0 :
-            return UIColor(patternImage: UIImage(named: "Music_pattern Copy.png")!)
+            return "0xE5F7EE"
         case 1:
-            return UIColor(patternImage: UIImage(named: "Food_pattern Copy.png")!)
+            return "0xE5EBF7"
         case 2:
-            return UIColor(patternImage: UIImage(named: "Event_pattern Copy.png")!)
+            return "0xF7E5F6"
         default:
-            return UIColor(patternImage: UIImage(named: "Event_pattern.png")!)
+            return "0xblack"
+        }
+    }
+    
+    func getCategoryPattern() -> UIColor {
+        return UIColor(patternImage: getCategoryImage())
+    }
+    
+    func getCategoryImage() -> UIImage {
+        switch(category) {
+        case 0 :
+            return UIImage(named: "Music_pattern Copy.png")!
+        case 1:
+            return UIImage(named: "Food_pattern Copy.png")!
+        case 2:
+            return UIImage(named: "Event_pattern Copy.png")!
+        default:
+            return UIImage(named: "Event_pattern.png")!
             
         }
     }
@@ -113,22 +130,29 @@ class Card {
     func getLatLon(address:String) {
         let location = address
         let geocoder:CLGeocoder = CLGeocoder();
-        geocoder.geocodeAddressString(location) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+        let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: 38.9072, longitude: -77.0369), radius: 15000, identifier: "DCArea")
+        geocoder.geocodeAddressString(location,inRegion: region) { (placemarks: [CLPlacemark]?, error: NSError?) -> Void in
             if placemarks?.count > 0 {
+//                print("Returned",placemarks?.count,"for address",address)
+//                for place in placemarks! {
+////                    print(place)
+//                    place.locality
+//                }
+//                print("Return for",address,placemarks)
                 let topResult:CLPlacemark = placemarks![0];
                 let placemark: MKPlacemark = MKPlacemark(placemark: topResult);
                 self.lat = placemark.coordinate.latitude
                 self.lon = placemark.coordinate.longitude
                 self.downloadImage()
-                print("GotLatLon",placemark.coordinate)
+//                print("GotLatLon",placemark.coordinate)
             }
         }
     }
 
     func getURL() -> NSURL {
-        let centerLon = self.lon+0.004
+        let centerLon = self.lon-0.01
         
-        let url = String("https://maps.googleapis.com/maps/api/staticmap?center="+String(self.lat)+","+String(centerLon)+"&zoom=14&size=400x200&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&markers=color:white%7Clabel:C"+String(self.lat)+","+String(self.lon)+"&key=AIzaSyDQzBhLQfyJ5aL6Uu-tAueEaXPpXz5OCSc")
+        let url = String("https://maps.googleapis.com/maps/api/staticmap?center="+String(self.lat)+","+String(centerLon)+"&zoom=15&size=900x300&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&markers=size:normal|color:"+self.getCategoryColorHex()+"|"+String(self.lat)+","+String(self.lon)+"&key=AIzaSyDQzBhLQfyJ5aL6Uu-tAueEaXPpXz5OCSc")
         let path = NSURL(string: url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)
         return path!
     }

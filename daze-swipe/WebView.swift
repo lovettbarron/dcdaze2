@@ -8,10 +8,11 @@
 
 import Foundation
 import UIKit
+import WebKit
 
-class ReferenceWebView: UIViewController {
+class ReferenceWebView: UIViewController,WKNavigationDelegate {
     
-    @IBOutlet weak var webview:UIWebView!
+    @IBOutlet weak var webview:WKWebView!
     
     var passedURL:NSURL! = NSURL(string:"http://andrewlb.com")
     
@@ -19,6 +20,10 @@ class ReferenceWebView: UIViewController {
         super.viewDidLoad()
         print("Loading webview",passedURL)
 //        webview = UIWebView(frame: self.view.bounds)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("WebView did appear")
         let requestObj = NSURLRequest(URL: passedURL!)
         webview.loadRequest(requestObj)
     }
@@ -26,8 +31,9 @@ class ReferenceWebView: UIViewController {
     @IBAction func dismissButtonTapped(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
-    
+    // MARK: Webview Delegate functions
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        print("Finished navigating to url",self.webview.URL)
+    }
     
 }

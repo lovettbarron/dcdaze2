@@ -44,10 +44,10 @@
                                                         <constraint firstAttribute="height" constant="22" id="fwd-XR-qsZ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-Vb-TTt">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-Vb-TTt">
                                                     <rect key="frame" x="0.0" y="22" width="340" height="138"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-y6-tGk" userLabel="textbg">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-y6-tGk" userLabel="textbg">
                                                     <rect key="frame" x="0.0" y="40" width="240" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l52-zA-nTW">
@@ -292,7 +292,7 @@ Location</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Ucm-Sp-qbY" kind="presentation" identifier="openLink" id="egJ-HO-gUr"/>
+                                            <segue destination="Ucm-Sp-qbY" kind="show" identifier="openLink" id="egJ-HO-gUr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAg-SQ-mAU">
@@ -364,7 +364,6 @@ Location</string>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="CvS-0W-Qsl" appends="YES" id="tru-u0-dtI"/>
                                     <outletCollection property="gestureRecognizers" destination="vP8-GP-PXR" appends="YES" id="feN-Bv-lwj"/>
                                 </connections>
                             </view>
@@ -408,11 +407,6 @@ Location</string>
                         <action selector="dismissButtonSwipe:" destination="Rhj-Cq-Tnf" id="xWv-sS-KIt"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <pinchGestureRecognizer id="CvS-0W-Qsl">
-                    <connections>
-                        <action selector="dismissButtonClosed:" destination="Rhj-Cq-Tnf" id="74W-kC-0Nz"/>
-                    </connections>
-                </pinchGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="vP8-GP-PXR"/>
             </objects>
             <point key="canvasLocation" x="-342" y="-1533"/>
@@ -434,7 +428,7 @@ Location</string>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Ucm-Sp-qbY" id="bWG-n3-8r9"/>
+                                    <outlet property="delegate" destination="Ucm-Sp-qbY" id="IT2-HQ-0q8"/>
                                 </connections>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGR-mJ-DZO">

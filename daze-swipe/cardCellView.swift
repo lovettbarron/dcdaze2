@@ -25,6 +25,7 @@ class cardCellView: UITableViewCell {
     
     func useCard(card:Card) {
         viewCard = card
+        viewCard.headlineImage = viewCard.getCategoryImage()
         // Fill in the data
         nameLabel.text = card.name
         nameLabel.font = UIFont(name: "KnockHTF52Cru", size: 34)
@@ -80,8 +81,8 @@ class cardCellView: UITableViewCell {
         print("Got Image update notification")
         self.mapView.reloadInputViews()
         self.mapView.image = self.viewCard.mapThumbnail!
-        self.mapView.contentMode = UIViewContentMode.ScaleAspectFill
-        self.mapView.clipsToBounds = true
+//        self.mapView.contentMode = UIViewContentMode.ScaleAspectFill
+//        self.mapView.clipsToBounds = true
     }
     
     class func animate(cell:UITableViewCell) {
